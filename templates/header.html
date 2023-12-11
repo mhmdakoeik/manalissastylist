@@ -6,15 +6,15 @@
          <div class="header-bottom header-sticky">
             <!-- Logo -->
             <div class="logo">
-                <a href="index.html"><img src="{% static 'img/logo/Logo_Transparent_Background.png' %}" alt="" style="height: 75px;width: auto;"></a>
+                <a href="{% url 'home' %}"><img src="{% static 'img/logo/Logo_Transparent_Background.png' %}" alt="" style="height: 75px;width: auto;"></a>
             </div>
             <div class="header-left  d-flex f-right align-items-center">
                 <!-- Main-menu -->
                 <div class="main-menu f-right d-none d-lg-block">
                     <nav> 
                         <ul id="navigation">                                                                                                                                     
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li><a href="blog.html">Blogs</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
