@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'contact.apps.ContactConfig',
     'service.apps.ServiceConfig',
+    'gallery.apps.GalleryConfig',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

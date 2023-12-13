@@ -7,3 +7,8 @@ def services(request):
     custom_range, paginated_services = paginateServices(request, all_services, 3)
     context = {'services': paginated_services, 'custom_range': custom_range}
     return render(request, 'services/services.html', context)
+
+def service(request,pk):
+    service = Service.objects.get(id=pk)
+    context = {'service':service}
+    return render(request,'services/service.html',context)

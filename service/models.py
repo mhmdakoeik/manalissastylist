@@ -13,12 +13,6 @@ class Service(models.Model):
     what_include = models.TextField(null=True,blank=True)
     image_2 = models.ImageField(null=True,blank=True)
     in_addition = models.TextField(null=True,blank=True)
-
-    def what_include_lines(self):
-        return filter(None, (line.strip() for line in (self.what_include or '').splitlines()))
-
-    def in_addition_lines(self):
-        return filter(None, (line.strip() for line in (self.in_addition or '').splitlines()))
     
     def __str__(self):
         return self.title
