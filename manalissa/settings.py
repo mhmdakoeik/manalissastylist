@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'about.apps.AboutConfig',
     'contact.apps.ContactConfig',
+    'service.apps.ServiceConfig',
 ]
 
 MIDDLEWARE = [
@@ -272,13 +273,12 @@ EMAIL_HOST_PASSWORD = 'smxr kltr couo vntg'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
