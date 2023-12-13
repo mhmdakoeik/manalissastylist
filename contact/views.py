@@ -10,18 +10,18 @@ def contact(request):
         if form.is_valid():
             form.save()
             sender_email = form.cleaned_data['email']
-            message = f"From: {sender_email}\n\n{form.cleaned_data['message']}"
+            sender_name = form.cleaned_data['name']
+            subject = form.cleaned_data['subject']
+            message = f"From: {sender_name}\n\nEmail: {sender_email}\n\n {form.cleaned_data['message']}"
 
             send_mail(
-                form.cleaned_data['subject'],
+                subject,
                 message,
                 settings.EMAIL_HOST_USER,
                 [settings.EMAIL_HOST_USER],
+                fail_silently=False
             )
-            messages.success(request, 'Message sent successfully!')
             return redirect('home')
-        else:
-            messages.error(request, 'Message not sent!')
     else:
         form = ContactForm()
 
