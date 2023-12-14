@@ -18,13 +18,13 @@
         <a href="index.html" class="header-btn">Return Home</a>
       </div>
     </header>
-    <form action="#" class="form" id="forms" onsubmit="event.preventDefault()">
+    <form action="" method="POST" class="form" id="forms" enctype="multipart/form-data" onsubmit="event.preventDefault()">
       <div class="progressbar">
         <div class="progress" id="progress"></div>
 
         <div
           class="progress-step progress-step-active"
-          data-title="Account"
+          data-title="User Info"
         ></div>
 
         <div class="progress-step" data-title="Social"></div>
@@ -32,7 +32,7 @@
       </div>
       <div class="step-forms step-forms-active">
         <div class="group-inputs">
-          <label for="username">Username</label>
+          <label for="username">name</label>
           <input type="text" name="username" id="username" />
         </div>
         <div class="group-inputs">

@@ -13,10 +13,14 @@ body {
     margin: 50px 0;
     display: grid;
     place-items: center;
-    min-height: 100vh;
-    background: url(http://127.0.0.1:5500/assets/img/gallery/footer-bg.png);
-    background-repeat: none;
+    background-image: url("../img/gallery/feedback_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
+}
+.img{
+    z-index: -1;
 }
 .header-btn{
         border: none;
@@ -275,4 +279,56 @@ input {
     100% {
         box-shadow: inset 0px 0px 0px 30px #7ac142
     }
+}
+.rate {
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+textarea {
+    width: 100%;
+    border-color: lightgray;
+    padding: 10px;
+}
+input:focus { 
+    outline: none !important;
+    border-color: #be9278;
+    box-shadow: 0 0 10px #be9278;
+}
+textarea:focus { 
+    outline: none !important;
+    border-color: #be9278;
+    box-shadow: 0 0 10px #be9278;
 }
