@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
 {% include "header.html" %}
-<main>
+<div class="gallery-page">
+<main >
     <div class="slider-area position-relative">
         <div class="slider-active">
             <div class="single-slider position-relative hero-overly slider-height2  d-flex align-items-center" data-background="{% static 'img/hero/h1_hero.png' %}">
@@ -17,16 +18,26 @@
                 </div>
             </div>
             <div class="hero-img hero-img2">
-                <img src="{% static 'img/hero/h2_hero2.png' %}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                <img src="{% static 'img/gallery/banner.jpg' %}" style="width: 626px;
+                height: 320px;" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
             </div>
         </div>
     </div>
 </div>
-    <div class="image-gallery">
-        {% for image in multi_image.image_set.all %}
-            <img src="{{ image.image.url }}" alt="Image">
-        {% endfor %}
-    </div>
+<div class="cont">
+    {% for multi_image in multi_images %}
+            <img id="{{multi_image.id}}" class="img1" src="{{ multi_image.image.url }}" alt="Image">
+    {% endfor %}
+</div>
+
+{% include "pagination.html" with queryset=multi_images custom_range=custom_range %}
+
+<div class="overlay" id="overlay">
+    <span class="close-btn" onclick="closeOverlay()">X</span>
+    <img id="expandedImg" class="img1">
+</div>
+        
 </main>
 {% include "footer.html" %}
+</div>
 {% endblock content %}
