@@ -24,10 +24,20 @@
     flex: 5;
 }
 
-@media (max-width: 780px) {
+/* @media (max-width: 780px) {
     .gallery-container {
         width: 100%;
         flex-direction: column;
         height: 100vw;
+    }
+} */
+@media (max-width: 480px) {
+    .panel:nth-of-type(3),.panel:nth-of-type(4), .panel:nth-of-type(5) {
+        display: none;
+    }
+}
+@media (max-width: 750px) {
+    .panel:nth-of-type(4), .panel:nth-of-type(5) {
+        display: none;
     }
 }

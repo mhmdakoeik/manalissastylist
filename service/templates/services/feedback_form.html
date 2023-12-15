@@ -17,67 +17,52 @@
         <a href="{% url 'home' %}" class="header-btn">Return To Site</a>
       </div>
     </header>
+    {% if not success %}
     <form
-      action="{% url 'feedback' %}"
+      action=""
       class="form"
       id="forms"
-      onsubmit="event.preventDefault()"
+      method="POST"
+      enctype="multipart/form-data"
     >
       {% csrf_token %}
       <h3 class="text-center">Nice To Hear Your Feedback</h3>
-      <div class="progressbar">
-        <div class="progress" id="progress"></div>
-
-        <div class="progress-step progress-step-active" data-title="Info"></div>
-
-        <div class="progress-step" data-title="Feedback"></div>
-      </div>
       <div class="step-forms step-forms-active">
+        {% for field in form %}
         <div class="group-inputs">
-          <label for="username">Name</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value="{{ form.name.value }}"
-          />
+          <label for="">{{field.label}}</label>
+          {{field}}
         </div>
-        <div class="group-inputs">
-          <label for="username">Email</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value="{{ form.email.value }}"
-          />
-        </div>
-        <div class="group-inputs">
-          <label for="position">Profile Picture</label>
-          <input
-            type="file"
-            name="position"
-            id="position"
-            value="{{ form.avatar.value }}"
-          />
-        </div>
-        <div class="">
-          <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
-        </div>
-      </div>
-      <div class="step-forms">
-        <div class="group-inputs">
-          <label for="ID">Message</label>
-          <textarea id="" cols="30" rows="10">
-{{ form.message.value }}</textarea
-          >
-        </div>
+        {% endfor %}
         <div class="btns-group">
-          <a href="#" class="btn btn-prev">Previous</a>
-          <input type="submit" value="Submit" id="submit-form" class="btn" />
+          <input type="submit" value="Submit" class="btn" />
         </div>
       </div>
     </form>
-
-    <script src="{% static 'js/booking.js' %}"></script>
+    {% else %}
+    <div class="welcome">
+      <div class="content">
+        <svg
+          class="checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 52 52"
+        >
+          <circle
+            class="checkmark__circle"
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+          />
+          <path
+            class="checkmark__check"
+            fill="none"
+            d="M14.1 27.2l7.1 7.2 16.7-16.8"
+          />
+        </svg>
+        <h2>Thanks for Feedback!</h2>
+      </div>
+    </div>
+    {% endif %}
   </body>
 </html>
