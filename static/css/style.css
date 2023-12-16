@@ -3454,11 +3454,9 @@ hr {
 }
 
 .visit-tailor-area .tailor-offers {
-    background-image: url(../img/gallery/about.png);
     background-size: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
     height: 570px;
     width: 50%;
     margin: 130px 0
@@ -6090,6 +6088,7 @@ hr {
     background: linear-gradient(to right, rgba(16, 26, 48, 0.7) 0%, rgba(16, 26, 48, 0.7) 12%, #101a31 91%, #101a31 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3101a30', endColorstr='#101a31', GradientType=1) */
     background: #88624B;
+    opacity: 0.9;
 }
 
 .sample-text-area {

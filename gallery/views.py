@@ -8,7 +8,6 @@ from .utils import paginateGallery
 
 @receiver(pre_delete, sender=Image)
 def delete_image_files(sender, instance, **kwargs):
-    # Delete the associated image file when an Image instance is deleted
     instance.image.delete(save=False)
 
 def image_gallery(request):

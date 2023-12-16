@@ -1,467 +1,227 @@
-{% extends "main.html" %}
-{% load static %}
-{% block content %}
-{% include "header.html" %}
+{% extends "main.html" %} {% load static %} {% block content %} {% include "header.html" %}
 <main>
-<!--? slider Area Start-->
-<div class="slider-area  position-relative ">
+  <!--? slider Area Start-->
+  {% for s in slider %}
+  <div class="slider-area position-relative">
     <div class="slider-active">
-        <!-- Single Slider -->
-        <div class="single-slider position-relative hero-overly slider-height  d-flex align-items-center" data-background="{% static 'img/hero/h1_hero.png' %}">
-            <div class="container">
-             <div class="row">
-                 <div class="col-xl-6 col-lg-6">
-                    <div class="hero-caption">
-                        <img class="rotateme" src="{% static 'img/logo/stylist.png' %}" alt="" data-animation="zoomIn" data-delay="1s" height="100" >
-                        <h1 data-animation="fadeInLeft" data-delay=".4s">We make cloths  that suit you</h1>
-                        <p data-animation="fadeInLeft" data-delay=".6s">TLorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse varius enim in eros elementum tristique. Duis 
-                        cursus, mi quis viverra ornare.</p>
-                        <!-- Hero Btn -->
-                        <a href="#" class="btn"  data-animation="fadeInLeft" data-delay=".8s" >Our Services</a>
-                    </div>
-                </div>
+      <!-- Single Slider -->
+      <div
+        class="single-slider position-relative hero-overly slider-height d-flex align-items-center"
+        data-background="{% static 'img/gallery/slide1.jpeg' %}"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6">
+              <div class="hero-caption">
+                <img
+                  class="rotateme"
+                  src="{% static 'img/logo/stylist.png' %}"
+                  alt=""
+                  data-animation="zoomIn"
+                  data-delay="1s"
+                  height="100"
+                />
+                <h1
+                  data-animation="fadeInLeft"
+                  data-delay=".4s"
+                  style="font-size: 38px !important"
+                >
+                  {{s.main_title}}
+                </h1>
+                <p data-animation="fadeInLeft" data-delay=".6s">
+                  {{s.subtitle}}
+                </p>
+                <!-- Hero Btn -->
+                <a
+                  href="{% url 'services' %}"
+                  class="btn"
+                  data-animation="fadeInLeft"
+                  data-delay=".8s"
+                  >Our Services</a
+                >
+              </div>
             </div>
+          </div>
         </div>
         <!-- Left img -->
         <div class="hero-img">
-            <img src="{% static 'img/hero/h1_hero1.png' %}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
-        </div>
-    </div>
-</div>
-</div>
-<!-- slider Area End-->
-
-<div class="container">
-<h1 class="text-center mb-30">Schedule</h1>
-<div class="row">
-  <div class="col-12">
-    <div class="row day-columns">
-      <div class="day-column">
-        <div class="day-header">Monday</div>
-        <div class="day-content">
-          <div class="event gray">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>4 Assets</span>
-                <span>20:00</span>
-              </footer>
-          </div>
-          <div class="event orange">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>3 Assets</span>
-                <span>21:30</span>
-              </footer>
-          </div>
-          <div class="event red">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-              </footer>
-          </div>
-          <div class="event blue">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-              </footer>
-          </div>
-        </div>
-      </div>
-      <div class="day-column">
-        <div class="day-header">Tuesday</div>
-        <div class="day-content">
-          <div class="event purple">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          
-          <div class="event blue">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-        </div>
-      </div>
-      <div class="day-column">
-        <div class="day-header">Wednesday</div>
-        <div class="day-content">
-          <div class="event yellow">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event navy">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event red">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event blue">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-        </div>
-      </div>
-      <div class="day-column">
-        <div class="day-header">Thursday</div>
-        <div class="day-content">
-          <div class="event purple">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event navy">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event orange">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event red">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event blue">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-        </div>
-      </div>
-      <div class="day-column">
-        <div class="day-header">Friday</div>
-        <div class="day-content">
-          <div class="event purple">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event navy">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-           <div class="event yellow">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event navy">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event red">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event blue">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event orange">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-        </div>
-      </div>
-      <div class="day-column">
-        <div class="day-header">Saturday</div>
-        <div class="day-content">
-          <div class="event purple">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event navy">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event red">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event blue">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-        </div>
-      </div>
-      <div class="day-column">
-        <div class="day-header">Sunday</div>
-        <div class="day-content">
-          <div class="event gray">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
-          <div class="event blue">
-              <span class="title">Event Name</span>
-              <footer>
-                <span>Prop1</span>
-                <span>20:30</span>
-                
-              </footer>
-          </div>
+          <img
+            src="{{s.image.url}}"
+            alt=""
+            data-animation="fadeInRight"
+            data-transition-duration="5s"
+            style="width: 750px"
+          />
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
+  {% endfor %}
+  <!-- slider Area End-->
 
-<!--? Clients Offers Start -->
-<div class="clients-area section-padding40">
-<div class="container">
-    <h1 class="text-center mb-30">Services</h1>
-    <div class="row">
+  <!--? Clients Offers Start -->
+  <div class="clients-area section-padding40">
+    <div class="container">
+      <h1 class="text-center mb-30">Services</h1>
+      <div class="row">
+        {% for s in service  %}
         <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".2s" >
-                <div class="offers-img">
-                    <img src="{% static 'img/gallery/offers1.png' %}" alt="">
-                </div>
-                <div class="offers-cap">
-                    <span>1</span>
-                    <h3><a href="services.html">Tailor Sweing</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                </div>
+          <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".2s">
+            <div class="offers-img">
+              <img src="{{s.main_image.url}}" alt="" />
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".4s">
-                <div class="offers-img">
-                    <img src="{% static 'img/gallery/offers2.png' %}" alt="">
-                </div>
-                <div class="offers-cap">
-                    <span>2</span>
-                    <h3><a href="services.html">Mesurement</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                </div>
+            <div class="offers-cap">
+              <span>1</span>
+              <h3><a href="services.html">{{s.title}}</a></h3>
+              <p>
+                {{s.short_description|slice:"100"}}
+              </p>
             </div>
+          </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".6s">
-                <div class="offers-img">
-                    <img src="{% static 'img/gallery/offers3.png' %}" alt="">
-                </div>
-                <div class="offers-cap">
-                    <span>3</span>
-                    <h3><a href="services.html">Ready-made</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".8s"
+          >More Services</a
+        >
+      </div>
     </div>
-    <div class="d-flex justify-content-center">
-      <a href="#" class="btn"  data-animation="fadeInLeft" data-delay=".8s" >More Services</a>
+  </div>
+  <!-- Clients Offers End -->
+  <!--? Visit Our Tailor Start -->
+  <section class="visit-tailor-area fix">
+    {% for a in about  %}
+    <div class="tailor-offers" data-background="{{a.image.url}}"></div>
+    <div class="tailor-details">
+      <h2 style="text-wrap: balance;">{{a.main_title}}</h2>
+      <p class="pera-top">{{a.main_top}}</p>
+      <p class="pera-bottom">{{a.main_bottom}}</p>
+      {% endfor %}
+      <a href="{% url 'about' %}" class="btn">More About Us</a>
     </div>
-</div>
-</div>
-<!-- Clients Offers End -->
-<!--? Visit Our Tailor Start -->
-<section class="visit-tailor-area fix">
-<!--Right Contents  -->
-<div class="tailor-offers"></div>
-<!-- left Contents -->
-<div class="tailor-details">
-    <h2>About our<br>tailor house</h2>
-    <p class="pera-top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
-    <p class="pera-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Suspendisse varius enim in eros elementum tristique. Duis 
-    cursus, mi quis viverra ornare.</p>
-    <a href="{% url 'about' %}" class="btn">More About Us</a>
-</div>
-</section>
-<!-- Visit Our Tailor End -->
-<!--? Services Area Start -->
-<section class="categories-area section-padding40">
-<div class="container">
-    <!-- section Tittle -->
-    <div class="row justify-content-center">
+  </section>
+  <!-- Visit Our Tailor End -->
+  <!--? Services Area Start -->
+  <section class="categories-area section-padding40">
+    <div class="container">
+      <!-- section Tittle -->
+      <div class="row justify-content-center">
         <div class="col-xl-6 col-lg-6 col-md-7 col-sm-9">
-            <div class="section-tittle text-center mb-60">
-                <h2>Why use our service?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
-            </div>
+          <div class="section-tittle text-center mb-60">
+            <h2>Why use our service?</h2>
+          </div>
         </div>
+      </div>
+      <div class="row">
+        {% for w in whyUs %}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="single-cat mb-50 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay=".2s"
+          >
+            <div class="cat-icon">
+              <img src="{{w.icon_1.url}}" alt="" />
+            </div>
+            <div class="cat-cap">
+              <h5>{{w.title_1}}</h5>
+              <p>{{w.text_1}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="single-cat mb-50 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay=".2s"
+          >
+            <div class="cat-icon">
+              <img src="{{w.icon_2.url}}" alt="" />
+            </div>
+            <div class="cat-cap">
+              <h5>{{w.title_2}}</h5>
+              <p>{{w.text_2}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="single-cat mb-50 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay=".2s"
+          >
+            <div class="cat-icon">
+              <img src="{{w.icon_3.url}}" alt="" />
+            </div>
+            <div class="cat-cap">
+              <h5>{{w.title_3}}</h5>
+              <p>{{w.text_3}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="single-cat mb-50 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay=".2s"
+          >
+            <div class="cat-icon">
+              <img src="{{w.icon_4.url}}" alt="" />
+            </div>
+            <div class="cat-cap">
+              <h5>{{w.title_4}}</h5>
+              <p>{{w.text_4}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                <div class="cat-icon">
-                    <img src="{% static 'img/icon/services1.svg' %}" alt="">
-                </div>
-                <div class="cat-cap">
-                    <h5>Tailor Sweing</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                <div class="cat-icon">
-                    <img src="{% static 'img/icon/services2.svg' %}" alt="">
-                </div>
-                <div class="cat-cap">
-                    <h5>Tailor Sweing</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                <div class="cat-icon">
-                    <img src="{% static 'img/icon/services3.svg' %}" alt="">
-                </div>
-                <div class="cat-cap">
-                    <h5>Tailor Sweing</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                <div class="cat-icon">
-                    <img src="{%static 'img/icon/services4.svg' %}" alt="">
-                </div>
-                <div class="cat-cap">
-                    <h5>Tailor Sweing</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-<!--? Services Area End -->
-<div class="container">
+  </section>
+  <!--? Services Area End -->
+  <div class="container">
     <h1 class="text-center mb-30">Gallery</h1>
     <div class="gallery-container">
+      {% for g in gallery %}
       <div class="panel active">
         <img
-          src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696636800&semt=ais"
+          src="{{g.image_1.url}}"
           alt="Image 1"
         />
       </div>
       <div class="panel">
         <img
-          src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696636800&semt=ais"
+          src="{{g.image_2.url}}"
           alt="Image 2"
         />
       </div>
       <div class="panel">
         <img
-          src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696636800&semt=ais"
+          src="{{g.image_3.url}}"
           alt="Image 3"
         />
       </div>
       <div class="panel">
         <img
-          src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696636800&semt=ais"
+          src="{{g.image_4.url}}"
           alt="Image 4"
         />
       </div>
       <div class="panel">
         <img
-          src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696636800&semt=ais"
+          src="{{g.image_5.url}}"
           alt="Image 4"
         />
       </div>
+      {% endfor %}
     </div>
     <div class="d-flex justify-content-center mt-20">
-      <a href="#" class="btn"  data-animation="fadeInLeft" data-delay=".8s" >Show More</a>
+      <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".8s"
+        >Show More</a
+      >
     </div>
   </div>
-<!-- instagram-social End -->
+  <!-- instagram-social End -->
 </main>
-{% include "footer.html" %}
-
-{% endblock content %}
+{% include "footer.html" %} {% endblock content %}

@@ -23,6 +23,7 @@
       <div class="col-lg-9">
         <div class="about-caption pb-bottom">
           <div class="h1-testimonial-active dot-style">
+            {% for fb in feedback %}
             <div class="single-testimonial position-relative">
               <div class="testimonial-caption">
                 <img
@@ -31,48 +32,19 @@
                   class="quotes-sign"
                 />
                 <p>
-                  Brook presents your services with flexible, convenient and
-                  cdpose layouts. You can select your favorite layouts &
-                  elements for cular ts with unlimited ustomization
-                  possibilities. Pixel-perfect replica;ition of thei designers
-                  ijtls intended csents your se.
+                  {{fb.message}}
                 </p>
               </div>
-              <div class="testimonial-founder d-flex align-items-center">
+              <div class="testimonial-founder d-flex align-items-center" style="gap:30px">
                 <div class="founder-img">
-                  <img src="{% static 'img/icon/testimonial.png' %}" alt="" />
+                  <img src="{{fb.avatar.url}}" alt="" style="width:60px;height:auto;object-fit:cover;border-radius:50%"/>
                 </div>
                 <div class="founder-text">
-                  <span>Robart Brown</span>
-                  <p>Creative designer at Colorlib</p>
+                  <span>{{fb.name}}</span>
                 </div>
               </div>
             </div>
-            <div class="single-testimonial position-relative">
-              <div class="testimonial-caption">
-                <img
-                  src="{% static 'img/icon/quotes-sign.png' %}"
-                  alt=""
-                  class="quotes-sign"
-                />
-                <p>
-                  Brook presents your services with flexible, convenient and
-                  cdpose layouts. You can select your favorite layouts &
-                  elements for cular ts with unlimited ustomization
-                  possibilities. Pixel-perfect replica;ition of thei designers
-                  ijtls intended csents your se.
-                </p>
-              </div>
-              <div class="testimonial-founder d-flex align-items-center">
-                <div class="founder-img">
-                  <img src="{% static 'img/icon/testimonial.png' %}" alt="" />
-                </div>
-                <div class="founder-text">
-                  <span>Robart Brown</span>
-                  <p>Creative designer at Colorlib</p>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>

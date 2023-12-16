@@ -20,7 +20,7 @@ class Service(models.Model):
 class Feedback(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     created = models.DateTimeField(auto_now_add=True)
-    avatar = models.ImageField(upload_to='uploads/avatar/')
+    avatar = models.ImageField(upload_to='uploads/avatar/',null=True,blank=True)
     name = models.CharField(blank=True,null=True,max_length=200)
     email = models.EmailField(blank=True,null=True)
     message = models.TextField(null=True,blank=True)
