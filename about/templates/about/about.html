@@ -18,14 +18,14 @@
                 </div>
             </div>
             <div class="hero-img hero-img2">
-                <img src="{% static 'img/gallery/banner.jpg' %}" style="width: 626px;
-                height: 320px;" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                <img src="{% static 'img/gallery/hero_image.jpg' %}" style="width: 626px;
+                height: 340px;" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
             </div>
         </div>
     </div>
 </div>
 <section class="visit-tailor-area fix mt-margin">
-    <div class="tailor-offers"></div>
+    <div class="tailor-offers" data-background="{{about.image.url}}"></div>
     <div class="tailor-details">
         <h2 style="text-wrap: balance;">{{about.main_title}}</h2>
         <p class="pera-top">{{about.main_top}}</p>

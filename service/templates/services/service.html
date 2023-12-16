@@ -4,31 +4,27 @@
 {% block content %}
 {% include "header.html" %}
 
+<main>
 <div class="slider-area position-relative">
-    <div class="slider-active">
-      <!-- Single Slider -->
-      <div class="single-slider position-relative hero-overly slider-height2 d-flex align-items-center"
-        data-background="{% static 'img/hero/h1_hero.png' %}">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-6 col-lg-6">
-              <div class="hero-caption hero-caption2">
-                <img src="{% static 'img/hero/hero-icon.png' %}" alt="" data-animation="zoomIn" data-delay="1s" />
-                <h2 data-animation="fadeInLeft" data-delay=".4s">
-                  {{service.title}}
-                </h2>
+  <div class="slider-active">
+      <div class="single-slider position-relative hero-overly slider-height2  d-flex align-items-center" data-background="{% static 'img/hero/h1_hero.png' %}">
+          <div class="container">
+           <div class="row">
+               <div class="col-xl-6 col-lg-6">
+                  <div class="hero-caption hero-caption2">
+                      <img src="{% static 'img/hero/hero-icon.png' %}" alt="" data-animation="zoomIn" data-delay="1s">
+                      <h2 data-animation="fadeInLeft" data-delay=".4s">{{service.title}}</h2>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
-        <!-- Left img -->
-        <div class="hero-img hero-img2">
-          <img src="{% static 'img/gallery/banner.jpg' %}" style="width: 626px;
-          height: 320px;" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
       </div>
+      <div class="hero-img hero-img2">
+          <img src="{% static 'img/gallery/hero_image.jpg' %}" style="width: 626px;
+          height: 340px;" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
       </div>
-    </div>
   </div>
+</div>
+</div>
   <main class="main">
   
     <article>
@@ -85,7 +81,7 @@
       </div>
     </article>
   </main>
-
+</main>
   {% include "footer.html" %}
 
 {% endblock content %}
