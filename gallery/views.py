@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from .models import MultiImageModel
 from .models import Image
-from django.dispatch import receiver
-from django.db.models.signals import pre_delete
 from .utils import paginateGallery
+from django.dispatch import receiver
+from django.db.models.signals import pre_delete, pre_save
 
-
-@receiver(pre_delete, sender=Image)
-def delete_image_files(sender, instance, **kwargs):
-    instance.image.delete(save=False)
+@receiver([pre_delete, pre_save], sender=Image)
+def delete_or_update_image_files(sender, instance, **kwargs):
+    if instance.pk:
+        old_instance = Image.objects.get(pk=instance.pk)
+        if old_instance.image != instance.image:
+            old_instance.image.delete(save=False)
 
 def image_gallery(request):
     try:

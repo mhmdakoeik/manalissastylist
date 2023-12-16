@@ -5,7 +5,7 @@ import uuid
 class About(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     created = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(null=True,blank=True)
+    image = models.ImageField(null=True,blank=True,upload_to='uploads/about/')
     main_title = models.CharField(null=True,blank=True,max_length=200)
     main_top = models.CharField(null=True,blank=True,max_length=800)
     main_bottom = models.CharField(null=True,blank=True,max_length=800)

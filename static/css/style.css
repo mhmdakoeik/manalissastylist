@@ -3578,7 +3578,9 @@ hr {
 .clients-area .single-offers .offers-img img {
     width: 100%;
     transform: scale(1);
-    transition: all 0.6s ease-out 0s
+    transition: all 0.6s ease-out 0s;
+    height: 350px;
+    object-fit: cover;
 }
 
 .clients-area .single-offers .offers-cap {
@@ -7204,4 +7206,8 @@ del {
     .about-text{
         display: block;
     }
+}
+
+.modal-backdrop.show{
+    z-index: 2;
 }

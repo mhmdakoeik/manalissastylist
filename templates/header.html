@@ -23,9 +23,36 @@
                     </nav>
                 </div>
                 <!-- left Btn -->
-                <div class="header-right-btn f-right d-none d-lg-block  ml-30">
-                    <a href="#" class="header-btn">Book Now</a>
-                </div>
+                <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                    <button type="button" class="header-btn" data-toggle="modal" data-target="#exampleModal">
+                      Book Now
+                    </button>
+                  </div>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Please read and agree to the terms and conditions.</p>
+                          <form id="termsForm">
+                            <div class="form-group form-check">
+                              <input type="checkbox" class="form-check-input" id="agreeCheck">
+                              <label class="form-check-label" for="agreeCheck"> I agree to the terms and conditions</label>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" id="acceptBtn" disabled>Accept</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>          
             <!-- Mobile Menu -->
             <div class="col-12">
@@ -34,5 +61,6 @@
         </div>
     </div>
 </div>
+
 <!-- Header End -->
 </header>

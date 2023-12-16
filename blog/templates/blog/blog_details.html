@@ -8,28 +8,30 @@
         <!--? slider Area Start-->
         <div class="slider-area position-relative">
             <div class="slider-active">
-                <!-- Single Slider -->
-                <div class="single-slider position-relative hero-overly slider-height2 d-flex align-items-center"
-                    data-background="{% static 'assets/img/hero/h1_hero.png' %}">
+                <div class="single-slider position-relative hero-overly slider-height2  d-flex align-items-center" data-background="{% static 'img/gallery/slide1.jpeg' %}" style="background-position-y: -540px;">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="hero-caption hero-caption2">
-                                    <img src="{% static 'assets/img/hero/hero-icon.png' %}" alt=""
-                                        data-animation="zoomIn" data-delay="1s">
-                                    <h2 data-animation="fadeInLeft" data-delay=".4s">"{{ blog.title }}"</h2>
-                                </div>
+                     <div class="row">
+                         <div class="col-xl-6 col-lg-6">
+                            <div class="hero-caption hero-caption2">
+                                <img src="{% static 'img/logo/stylist.png' %}" class="rotateme"
+                                src="{% static 'img/logo/stylist.png' %}"
+                                alt=""
+                                data-animation="zoomIn"
+                                data-delay="1s"
+                                height="100">
+                                <h2 data-animation="fadeInLeft" data-delay=".4s">{{blog.title}}</h2>
                             </div>
                         </div>
                     </div>
-                    <!-- Left img -->
-                    <div class="hero-img hero-img2">
-                        <img src="{% static 'assets/img/hero/h2_hero2.png' %}" alt="" data-animation="fadeInRight"
-                            data-transition-duration="5s">
-                    </div>
                 </div>
+                {% comment %} <div class="hero-img hero-img2">
+                    <img src="{% static 'img/gallery/hero_image.jpg' %}" style="width: 626px;
+                    height: 340px;" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                </div> {% endcomment %}
             </div>
         </div>
+    </div>
+        
         <!-- slider Area End-->
         <!--? Blog Area Start -->
         <section class="blog_area single-post-area section-padding">
@@ -38,7 +40,8 @@
                     <div class="col-12 posts-list">
                         <div class="single-post">
                             <div class="feature-img">
-                                <img class="img-fluid w-100" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                                <img class="img-fluid w-100" src="{{ blog.image.url }}" alt="{{ blog.title }}" style="    height: 700px;
+                                object-fit: cover;">
                             </div>
                             <div class="blog_details">
                                 <h2 style="color: #2d2d2d;">{{ blog.title }}</h2>

@@ -69,13 +69,13 @@
       <div class="col-lg-6 col-md-6">
         <div class="single-instagram mb-30">
           <img src="{% static 'img/gallery/insta.jpeg' %}" alt="" />
-          <a href="#"><i class="ti-instagram"></i></a>
+          <a href="https://www.instagram.com/manalissastylist?igshid=YTQwZjQ0NmI0OA=="><i class="ti-instagram"></i></a>
         </div>
       </div>
       <div class="col-lg-6 col-md-6">
         <div class="single-instagram">
           <img src="{% static 'img/gallery/facebook.jpg' %}" alt="" />
-          <a href="#"><i class="ti-facebook"></i></a>
+          <a href="https://www.facebook.com/nana.issa.777?mibextid=LQQJ4d"><i class="ti-facebook"></i></a>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
 <footer>
   <div
   class="footer-wrapper section-bg2 pl-100"
-  style="background: #88624b;"
+  style="background: linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);"
 >
     <!-- Footer Start-->
     <div class="footer-area footer-padding">
@@ -104,20 +104,16 @@
                 </div>
                 <div class="footer-tittle">
                   <div class="footer-pera">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    <p>Unleash Your Signature Style, Redefine Your Presence & Image Excellence, Every Moment</p>
                   </div>
                   <ul class="mb-40">
-                    <li class="number"><a href="#">(80) 783 367-3904</a></li>
-                    <li class="number2"><a href="#">(80) 783 367-3904</a></li>
+                    <li class="number"><a href="tel:+1 313 938-2888">+1 313 938-2888</a></li>
                   </ul>
                 </div>
                 <!-- social -->
                 <div class="footer-social">
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="https://bit.ly/sai4ull"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                  <a href="https://www.facebook.com/nana.issa.777?mibextid=LQQJ4d"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com/manalissastylist?igshid=YTQwZjQ0NmI0OA=="><i class="fab fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -127,11 +123,12 @@
               <div class="footer-tittle">
                 <h4>Menu</h4>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="{% url "services" %}">Services</a></li>
+                  <li><a href="{% url 'blogs' %}">Blogs</a></li>
+                  <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
               </div>
             </div>
@@ -141,11 +138,9 @@
               <div class="footer-tittle">
                 <h4>Our Services</h4>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact</a></li>
+                  {% for s in service %}
+                  <li><a href="{% url 'service' s.id %}">{{s.title}}</a></li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
@@ -155,11 +150,8 @@
               <div class="footer-tittle">
                 <h4>Company</h4>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Terms & Condition</a></li>
+                  <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
               </div>
             </div>
@@ -179,8 +171,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  All rights reserved | This template is made with
-                  <i class="fa fa-heart"></i> by Colorlib
+                  All rights reserved | Manal Issa Stylist
                 </p>
               </div>
             </div>

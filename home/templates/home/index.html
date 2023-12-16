@@ -7,7 +7,7 @@
       <!-- Single Slider -->
       <div
         class="single-slider position-relative hero-overly slider-height d-flex align-items-center"
-        data-background="{% static 'img/gallery/slide1.jpeg' %}"
+        data-background="{% static 'img/gallery/slide7.jpeg' %}"
       >
         <div class="container">
           <div class="row">
@@ -72,7 +72,7 @@
             </div>
             <div class="offers-cap">
               <span>1</span>
-              <h3><a href="services.html">{{s.title}}</a></h3>
+              <h3><a href="{% url 'service' s.id %}">{{s.title}}</a></h3>
               <p>
                 {{s.short_description|slice:"100"}}
               </p>
@@ -82,7 +82,7 @@
         {% endfor %}
       </div>
       <div class="d-flex justify-content-center">
-        <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".8s"
+        <a href="{% url 'services' %}" class="btn" data-animation="fadeInLeft" data-delay=".8s"
           >More Services</a
         >
       </div>
