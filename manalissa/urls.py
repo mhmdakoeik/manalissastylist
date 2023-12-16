@@ -27,6 +27,7 @@ urlpatterns = [
     path('contact',include('contact.urls')),
     path('services/',include('service.urls')),
     path('gallery',include('gallery.urls')),
+    path('blogs',include('blog.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

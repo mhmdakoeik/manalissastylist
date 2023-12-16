@@ -1,0 +1,123 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "header.html" %}
+    <main>
+        <!--? slider Area Start-->
+        <div class="slider-area position-relative">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider position-relative hero-overly slider-height2  d-flex align-items-center" data-background="{% static 'assets/img/hero/h1_hero.png' %}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="hero-caption hero-caption2">
+                                    <img src="{% static 'assets/img/hero/hero-icon.png' %}" alt="" data-animation="zoomIn" data-delay="1s">
+                                    <h2 data-animation="fadeInLeft" data-delay=".4s">Blog</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left img -->
+                <div class="hero-img hero-img2">
+                    <img src="{% static 'assets/img/hero/h2_hero2.png' %}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                </div>
+            </div>
+        </div>
+        
+        <!-- slider Area End-->
+        <!--? Blog Area Start-->
+        <section class="blog_area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                            
+                            {% for blog in blogs %}
+                            <article class="blog_item">
+                                <div class="blog_item_img">
+                                    <img class="card-img rounded-0" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                                    <a href="{% url 'blog' blog.id %}" class="blog_item_date">
+                                        <h3>{{ blog.date.day }}</h3>
+                                        <p>{{ blog.date|date:"M" }}</p>
+                                    </a>
+                                </div>
+                                <div class="blog_details">
+                                    <a class="d-inline-block" href="{% url 'blog' blog.id %}">
+                                        <h2 class="blog-head" style="color: #2d2d2d;">{{ blog.title }}</h2>
+                                    </a>
+                                    <p>{{ blog.content }}</p>
+                                </div>
+                            </article>
+                            {% endfor %}
+                            <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <!-- Previous Page Link -->
+                                    {% if blogs.has_previous %}
+                                        <li class="page-item">
+                                            <a href="?page={{ blogs.previous_page_number }}{% if search_query %}&search_query={{ search_query }}{% endif %}" class="page-link" aria-label="Previous">
+                                                <i class="ti-angle-left"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                            
+                                    <!-- Page Numbers -->
+                                    {% for num in custom_range %}
+                                        <li class="page-item {% if blogs.number == num %}active{% endif %}">
+                                            <a href="?page={{ num }}{% if search_query %}&search_query={{ search_query }}{% endif %}" class="page-link">{{ num }}</a>
+                                        </li>
+                                    {% endfor %}
+                            
+                                    <!-- Next Page Link -->
+                                    {% if blogs.has_next %}
+                                        <li class="page-item">
+                                            <a href="?page={{ blogs.next_page_number }}{% if search_query %}&search_query={{ search_query }}{% endif %}" class="page-link" aria-label="Next">
+                                                <i class="ti-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                            
+                        </div>
+                    </div>
+                    <script>
+                        // JavaScript function to auto-submit the form when the search field is cleared
+                        function autoSubmitOnClear(event) {
+                            if (event.target.value === '') {
+                                document.getElementById('searchForm').submit();
+                            }
+                        }
+                    </script>
+                    <div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            <aside class="single_sidebar_widget search_widget">
+                                <!-- Modified search form to use GET method -->
+                                <form action="{% url 'blogs' %}" method="get">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" name="search_query" placeholder='Search Keyword'
+                                                   value="{{ search_query }}"
+                                                   onfocus="this.placeholder = ''"
+                                                   onblur="this.placeholder = 'Search Keyword'">
+                                            <div class="input-group-append">
+                                                <button class="btns" type="submit"><i class="ti-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                            type="submit">Search</button>
+                                </form>
+                            </aside>
+                            <!-- You can add more widgets here if needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Area End -->
+    </main>
+    {% include "footer.html" %}
+{% endblock %}

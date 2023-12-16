@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'service.apps.ServiceConfig',
     'gallery.apps.GalleryConfig',
+    'blog.apps.BlogConfig',
     'django.contrib.humanize',
 ]
 
