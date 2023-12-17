@@ -11,8 +11,6 @@ class Service(models.Model):
     long_description = models.TextField(null=True,blank=True)
     image_1 = models.ImageField(null=True,blank=True,upload_to='uploads/services/')
     what_include = models.TextField(null=True,blank=True)
-    image_2 = models.ImageField(null=True,blank=True,upload_to='uploads/services/')
-    in_addition = models.TextField(null=True,blank=True)
     
     def __str__(self):
         return self.title
