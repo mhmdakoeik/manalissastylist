@@ -4,15 +4,10 @@ from .models import Slider,WhyChooseOurServices,Gallery
 from django.dispatch import receiver
 from django.db.models.signals import pre_delete, pre_save
 
-@receiver([pre_delete, pre_save], sender=Slider)
-def delete_or_update_image_files_slider(sender, instance, **kwargs):
-    try:
-        old_instance = Slider.objects.get(pk=instance.pk)
-    except Slider.DoesNotExist:
-        return  # Handle the case where the instance doesn't exist
-
-    if old_instance.image != instance.image:
-        old_instance.image.delete(save=False)
+@receiver(pre_delete, sender=Slider)
+def delete_slider_image(sender, instance, **kwargs):
+    if instance.image:
+        instance.image.delete(False)
 
 @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
 def handle_whychoose_icon_files(sender, instance, **kwargs):
