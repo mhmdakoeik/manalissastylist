@@ -138,7 +138,7 @@
               <div class="footer-tittle">
                 <h4>Our Services</h4>
                 <ul>
-                  {% for s in service %}
+                  {% for s in service_f %}
                   <li><a href="{% url 'service' s.id %}">{{s.title}}</a></li>
                   {% endfor %}
                 </ul>

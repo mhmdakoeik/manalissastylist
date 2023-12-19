@@ -6,4 +6,4 @@ def feedback_processor(request):
 
 def service_processor(request):
     service = Service.objects.all()[:3]
-    return {'service':service}
+    return {'service_f':service}
