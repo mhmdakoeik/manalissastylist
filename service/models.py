@@ -13,7 +13,7 @@ class Service(models.Model):
     what_include = models.TextField(null=True,blank=True)
     
     def __str__(self):
-        return self.title
+        return str(self.title)
 
 class Feedback(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -25,4 +25,4 @@ class Feedback(models.Model):
     show = models.BooleanField(null=True,blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
