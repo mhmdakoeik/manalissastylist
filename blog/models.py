@@ -6,7 +6,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     date = models.DateField()
-    image = models.ImageField(null=True,blank=True,upload_to='uploads/blog/')
+    image = models.ImageField(null=True,blank=True,upload_to='')
     pargraph = models.TextField(null=True,blank=True)
     auth_name = models.TextField(null = True , blank=True)
     auth_image = models.ImageField(upload_to='uploads/blog/')
