@@ -142,7 +142,7 @@ JAZZMIN_SETTINGS = {
     "site_logo": "img/logo/Logo_Transparent_Background.png",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": 'img/logo/Logo_Transparent_Background.png',
+    "login_logo": 'img/logo/Logo_Transparent_Background_login.png',
 
     # Logo to use for login form in dark themes (defaults to login_logo)
     "login_logo_dark": 'img/logo/Logo_Transparent_Background.png',

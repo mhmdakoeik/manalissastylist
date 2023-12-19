@@ -7211,7 +7211,3 @@ del {
 .modal-backdrop.show{
     z-index: 2;
 }
-
-.jazzmin-login-page .login-logo img{
-    width: 100px;
-}
