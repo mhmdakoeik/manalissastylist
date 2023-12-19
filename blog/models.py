@@ -3,7 +3,7 @@ import uuid
 class Blog(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     created = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=200,required=True)
+    title = models.CharField(max_length=200)
     content = models.TextField(null=True,blank=True,required=True)
     date = models.DateField(null=True,blank=True,required=True)
     image = models.ImageField(null=True,blank=True,upload_to='uploads/blog/',required=True)
