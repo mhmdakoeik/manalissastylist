@@ -7207,8 +7207,8 @@ del {
         display: block;
     }
     .highlight ul.m-0.list-unstyled {
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
     }
 }
 
