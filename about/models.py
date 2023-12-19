@@ -20,4 +20,4 @@ class About(models.Model):
     
     
     def __str__(self):
-        return self.main_title
+        return str(self.main_title)
