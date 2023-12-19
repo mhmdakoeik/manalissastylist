@@ -23,6 +23,14 @@ def blogs(request):
         search_query = request.GET.get('search_query')
 
     allBlogs = Blog.objects.filter(title__icontains=search_query).order_by('created')
+
+    # Process each blog to ensure there is an image file before trying to access it
+    for blog in allBlogs:
+        if not blog.image or not blog.image.file:
+            # Handle the case where the image is not present
+            # For example, set to None or provide a default image path
+            blog.image = None
+
     custom_range, paginated_blogs = paginateBlogs(request, allBlogs, 2)
 
     context = {
@@ -31,6 +39,7 @@ def blogs(request):
         'search_query': search_query
     }
     return render(request, 'blog/blog.html', context)
+
 
 
 def blog(request,pk):
