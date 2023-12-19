@@ -3,13 +3,35 @@ from .models import Service,Feedback
 from .utils import paginateServices
 from .forms import FeedbackForm
 from django.dispatch import receiver
-from django.db.models.signals import pre_delete
+from django.db.models.signals import pre_delete,pre_save
 import uuid
 
 
-@receiver(pre_delete, sender=Feedback)
-def delete_image_files(sender, instance, **kwargs):
+@receiver([pre_delete, pre_save], sender=Feedback)
+def delete_image_files_feedback(sender, instance, **kwargs):
     instance.avatar.delete(save=False)
+
+@receiver([pre_delete, pre_save], sender=Service)
+def delete_or_update_image_files_service(sender, instance, **kwargs):
+    if instance.pk:  # Check if instance exists (i.e., being updated)
+        try:
+            old_instance = Service.objects.get(pk=instance.pk)
+            
+            if old_instance.main_image != instance.main_image:
+                old_instance.main_image.delete(save=False)
+            
+            if old_instance.image_1 != instance.image_1:
+                old_instance.image_1.delete(save=False)
+        
+        except Service.DoesNotExist:
+            pass  # Handle the case where the instance doesn't exist
+
+    else:  # Instance is being deleted
+        if instance.main_image:
+            instance.main_image.delete(save=False)
+        
+        if instance.image_1:
+            instance.image_1.delete(save=False)
 
 def services(request):
     all_services = Service.objects.all().order_by('created')
