@@ -17,7 +17,7 @@ def delete_or_update_image_files_about(sender, instance, **kwargs):
 def image_gallery(request):
     try:
         multi_images = Image.objects.all()
-        custom_range, paginated_gallery = paginateGallery(request, multi_images, 8)
+        custom_range, paginated_gallery = paginateGallery(request, multi_images, 10)
         context = {'multi_images': paginated_gallery, 'custom_range': custom_range}
     except Image.DoesNotExist:
         multi_images = None
