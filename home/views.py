@@ -14,9 +14,15 @@ def delete_or_update_image_files(sender, instance, **kwargs):
 @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
 def delete_or_update_whychoose_image_files(sender, instance, **kwargs):
     if instance.pk:
-        old_instance = WhyChooseOurServices.objects.get(pk=instance.pk)
+        try:
+            old_instance = WhyChooseOurServices.objects.get(pk=instance.pk)
+        except WhyChooseOurServices.DoesNotExist:
+            # This is a new instance, so no old instance exists
+            return
+
         if old_instance.image != instance.image:
             old_instance.image.delete(save=False)
+
 
 @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
 def handle_whychoose_icon_files(sender, instance, **kwargs):
