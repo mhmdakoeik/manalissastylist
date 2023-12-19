@@ -10,7 +10,6 @@ def delete_or_update_image_files_slider(sender, instance, **kwargs):
         old_instance = Slider.objects.get(pk=instance.pk)
         if old_instance.image != instance.image:
             old_instance.image.delete(save=False)
-            
 
 @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
 def handle_whychoose_icon_files(sender, instance, **kwargs):
