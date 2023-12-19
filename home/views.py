@@ -7,7 +7,7 @@ from django.db.models.signals import pre_delete, pre_save
 @receiver([pre_delete, pre_save], sender=Slider)
 def delete_slider_image(sender, instance, **kwargs):
     if instance.image:
-        instance.image.delete(False)
+        instance.image.delete(save=False)
 
 @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
 def handle_whychoose_icon_files(sender, instance, **kwargs):
