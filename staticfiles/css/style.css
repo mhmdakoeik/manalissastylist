@@ -7206,10 +7206,6 @@ del {
     .about-text{
         display: block;
     }
-    .highlight ul.m-0.list-unstyled {
-        display: flex !important;
-        flex-direction: column !important;
-    }
 }
 
 .modal-backdrop.show{
