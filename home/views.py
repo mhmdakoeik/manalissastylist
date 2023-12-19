@@ -4,7 +4,7 @@ from .models import Slider,WhyChooseOurServices,Gallery
 from django.dispatch import receiver
 from django.db.models.signals import pre_delete, pre_save
 
-@receiver(pre_delete, sender=Slider)
+@receiver([pre_delete, pre_save], sender=Slider)
 def delete_slider_image(sender, instance, **kwargs):
     if instance.image:
         instance.image.delete(False)
