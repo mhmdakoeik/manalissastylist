@@ -3,9 +3,9 @@ from .models import MultiImageModel
 from .models import Image
 from .utils import paginateGallery
 from django.dispatch import receiver
-from django.db.models.signals import pre_delete, pre_save
+from django.db.models.signals import pre_delete, pre_save,post_delete
 
-@receiver([pre_delete, pre_save], sender=Image)
+@receiver([post_delete,pre_delete, pre_save], sender=Image)
 def delete_or_update_image_files_about(sender, instance, **kwargs):
     try:
         old_instance = Image.objects.get(pk=instance.pk)
