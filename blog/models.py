@@ -6,10 +6,10 @@ class Blog(models.Model):
     title = models.CharField(max_length=200,blank=True,null=True)
     content = models.TextField(null=True,blank=True)
     date = models.DateField(null=True,blank=True)
-    image = models.ImageField(null=True,blank=True,upload_to='uploads/blog/',required=True)
+    image = models.ImageField(null=True,blank=False,upload_to='uploads/blog/')
     pargraph = models.TextField(null=True,blank=True)
     auth_name = models.TextField(null = True , blank=True)
-    auth_image = models.ImageField(upload_to='uploads/blog/',required=False)
+    auth_image = models.ImageField(upload_to='uploads/blog/',null=True,blank=False)
     
     def __str__(self):
         return str(self.title)
