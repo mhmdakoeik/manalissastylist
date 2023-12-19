@@ -7,9 +7,15 @@ from django.db.models.signals import pre_delete, pre_save
 @receiver([pre_delete, pre_save], sender=Blog)
 def delete_or_update_image_files(sender, instance, **kwargs):
     if instance.pk:
-        old_instance = Blog.objects.get(pk=instance.pk)
+        try:
+            old_instance = Blog.objects.get(pk=instance.pk)
+        except Blog.DoesNotExist:
+            # This is a new instance, so there's no old instance to compare with
+            return
+
         if old_instance.image != instance.image:
             old_instance.image.delete(save=False)
+
 
 def blogs(request):
     search_query = ''
