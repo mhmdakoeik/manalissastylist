@@ -294,7 +294,7 @@ EMAIL_HOST_PASSWORD = 'smxr kltr couo vntg'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/img')
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
