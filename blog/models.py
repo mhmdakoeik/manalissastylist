@@ -9,7 +9,7 @@ class Blog(models.Model):
     image = models.ImageField(null=True,blank=False,upload_to='uploads/blog/')
     pargraph = models.TextField(null=True,blank=True)
     auth_name = models.TextField(null = True , blank=True)
-    auth_image = models.ImageField(upload_to='uploads/blog/',null=True,blank=False)
+    auth_image = models.ImageField(upload_to='uploads/blog/',null=True,blank=True)
     
     def __str__(self):
         return str(self.title)

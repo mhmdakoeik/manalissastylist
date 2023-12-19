@@ -59,7 +59,9 @@
                         </div>
                         <div class="blog-author">
                             <div class="media align-items-center">
+                                {% if blog.auth_image %}
                                 <img src="{{ blog.auth_image.url }}" alt="{{ blog.auth_name }}">
+                                {% endif %}
                                 <div class="media-body">
                                     <a href="#">
                                         <h4>{{ blog.auth_name }}</h4>
