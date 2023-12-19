@@ -30,26 +30,24 @@ def handle_whychoose_icon_files(sender, instance, **kwargs):
         if old_icon and old_icon != new_icon:
             old_icon.delete(save=False)  # Delete the old icon file
 
+@receiver([pre_delete, pre_save], sender=Gallery)
+def handle_image_files(sender, instance, **kwargs):
+    if not instance.pk:
+        return  # If it's a new instance, there's nothing to do
 
+    try:
+        old_instance = Gallery.objects.get(pk=instance.pk)
+    except Gallery.DoesNotExist:
+        return  # If the instance does not exist, exit the function
 
-# @receiver([pre_delete, pre_save], sender=Gallery)
-# def handle_image_files(sender, instance, **kwargs):
-#     if instance.pk:  # Check if instance exists (i.e., being updated)
-#         old_instance = Gallery.objects.get(pk=instance.pk)
-#         for i in range(1, 6):  # Assuming images are from image_1 to image_5
-#             field_name = f'image_{i}'
-#             old_image = getattr(old_instance, field_name)
-#             new_image = getattr(instance, field_name)
-            
-#             if old_image and old_image != new_image:
-#                 old_image.delete(save=False)  # Delete old file if updated
+    # Loop through each icon field and delete the old file if it has been updated
+    for i in range(1, 6):
+        field_name = f'image_{i}'
+        old_image = getattr(old_instance, field_name)
+        new_image = getattr(instance, field_name)
 
-#     else:  # Instance is being deleted
-#         for i in range(1, 6):
-#             field_name = f'image_{i}'
-#             image = getattr(instance, field_name)
-#             if image:
-#                 image.delete(save=False)  # Delete associated files when instance is deleted
+        if old_image and old_image != new_image:
+            old_image.delete(save=False)  # Delete the old icon file
 
 def home(request):
     slider = Slider.objects.all()
