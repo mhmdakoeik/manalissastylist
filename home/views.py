@@ -11,24 +11,26 @@ def delete_or_update_image_files(sender, instance, **kwargs):
         if old_instance.image != instance.image:
             old_instance.image.delete(save=False)
 
-# @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
-# def handle_icon_files(sender, instance, **kwargs):
-#     if instance.pk:  # Check if instance exists (i.e., being updated)
-#         old_instance = WhyChooseOurServices.objects.get(pk=instance.pk)
-#         for i in range(1, 5):  # Assuming icons are from icon_1 to icon_4
-#             field_name = f'icon_{i}'
-#             old_icon = getattr(old_instance, field_name)
-#             new_icon = getattr(instance, field_name)
-            
-#             if old_icon and old_icon != new_icon:
-#                 old_icon.delete(save=False)  # Delete old file if updated
+@receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
+def handle_whychoose_icon_files(sender, instance, **kwargs):
+    if not instance.pk:
+        return  # If it's a new instance, there's nothing to do
 
-#     else:  # Instance is being deleted
-#         for i in range(1, 5):
-#             field_name = f'icon_{i}'
-#             icon = getattr(instance, field_name)
-#             if icon:
-#                 icon.delete(save=False)  # Delete associated files when instance is deleted
+    try:
+        old_instance = WhyChooseOurServices.objects.get(pk=instance.pk)
+    except WhyChooseOurServices.DoesNotExist:
+        return  # If the instance does not exist, exit the function
+
+    # Loop through each icon field and delete the old file if it has been updated
+    for i in range(1, 5):
+        field_name = f'icon_{i}'
+        old_icon = getattr(old_instance, field_name)
+        new_icon = getattr(instance, field_name)
+
+        if old_icon and old_icon != new_icon:
+            old_icon.delete(save=False)  # Delete the old icon file
+
+
 
 # @receiver([pre_delete, pre_save], sender=Gallery)
 # def handle_image_files(sender, instance, **kwargs):
