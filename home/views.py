@@ -12,14 +12,14 @@ def delete_or_update_image_files(sender, instance, **kwargs):
             old_instance.image.delete(save=False)
 
 @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
-def delete_or_update_image_files(sender, instance, **kwargs):
+def delete_or_update_whychoose_image_files(sender, instance, **kwargs):
     if instance.pk:
-        old_instance = Slider.objects.get(pk=instance.pk)
+        old_instance = WhyChooseOurServices.objects.get(pk=instance.pk)
         if old_instance.image != instance.image:
             old_instance.image.delete(save=False)
 
 @receiver([pre_delete, pre_save], sender=WhyChooseOurServices)
-def handle_icon_files(sender, instance, **kwargs):
+def handle_whychoose_icon_files(sender, instance, **kwargs):
     if instance.pk:  # Check if instance exists (i.e., being updated)
         old_instance = WhyChooseOurServices.objects.get(pk=instance.pk)
         for i in range(1, 5):  # Assuming icons are from icon_1 to icon_4
@@ -36,6 +36,7 @@ def handle_icon_files(sender, instance, **kwargs):
             icon = getattr(instance, field_name)
             if icon:
                 icon.delete(save=False)  # Delete associated files when instance is deleted
+
 
 @receiver([pre_delete, pre_save], sender=Gallery)
 def handle_image_files(sender, instance, **kwargs):
