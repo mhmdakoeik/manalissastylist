@@ -57,14 +57,14 @@
           </div>
         </div>
       </div>
-      <p class="mt-50">
+      <p class="mt-50" style="font-size:20px">
         {{service.short_description}}
       </p>
       <img src="{{service.main_image.url}}" style="height:500px;object-fit:contain"/>
     </article>
   
     <article>
-      <p>
+      <p style="font-size:20px">
         {% if service.long_description %}
           {{ service.long_description|linebreaksbr }}
         {% endif %}
