@@ -149,6 +149,17 @@
   </div>
 </section>
 <!--? Services Area End -->
+<section class="visit-tailor-area fix" style="margin-top:40px">
+  {% for a in about  %}
+  <div class="tailor-offers" data-background="{{a.image.url}}"></div>
+  <div class="tailor-details">
+    <h2 style="text-wrap: balance;">{{a.main_title}}</h2>
+    <p class="pera-top">{{a.main_top}}</p>
+    <p class="pera-bottom">{{a.main_bottom}}</p>
+    {% endfor %}
+    <a href="#" class="btn">Book Now</a>
+  </div>
+</section>
   <!--? Clients Offers Start -->
   <div class="clients-area section-padding40">
     <div class="container">
