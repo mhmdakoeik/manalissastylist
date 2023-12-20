@@ -5,5 +5,5 @@ def feedback_processor(request):
     return {'feedback': feedback}
 
 def service_processor(request):
-    service = Service.objects.all()[:3]
+    service = Service.objects.all().order_by('priority')[:3]
     return {'service_f':service}
