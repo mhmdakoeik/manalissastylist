@@ -58,7 +58,97 @@
   </div>
   {% endfor %}
   <!-- slider Area End-->
-
+    <!--? Visit Our Tailor Start -->
+    <section class="visit-tailor-area fix">
+      {% for a in about  %}
+      <div class="tailor-offers" data-background="{{a.image.url}}"></div>
+      <div class="tailor-details">
+        <h2 style="text-wrap: balance;">{{a.main_title}}</h2>
+        <p class="pera-top">{{a.main_top}}</p>
+        <p class="pera-bottom">{{a.main_bottom}}</p>
+        {% endfor %}
+        <a href="{% url 'about' %}" class="btn">More About Us</a>
+      </div>
+    </section>
+    <!-- Visit Our Tailor End -->
+<!--? Services Area Start -->
+<section class="categories-area section-padding40">
+  <div class="container">
+    <!-- section Tittle -->
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-6 col-md-7 col-sm-9">
+        <div class="section-tittle text-center mb-60">
+          <h2>Why use our service?</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {% for w in whyUs %}
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div
+          class="single-cat mb-50 wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay=".2s"
+        >
+          <div class="cat-icon">
+            <img src="{{w.icon_1.url}}" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5>{{w.title_1}}</h5>
+            <p>{{w.text_1}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div
+          class="single-cat mb-50 wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay=".2s"
+        >
+          <div class="cat-icon">
+            <img src="{{w.icon_2.url}}" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5>{{w.title_2}}</h5>
+            <p>{{w.text_2}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div
+          class="single-cat mb-50 wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay=".2s"
+        >
+          <div class="cat-icon">
+            <img src="{{w.icon_3.url}}" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5>{{w.title_3}}</h5>
+            <p>{{w.text_3}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div
+          class="single-cat mb-50 wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay=".2s"
+        >
+          <div class="cat-icon">
+            <img src="{{w.icon_4.url}}" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5>{{w.title_4}}</h5>
+            <p>{{w.text_4}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!--? Services Area End -->
   <!--? Clients Offers Start -->
   <div class="clients-area section-padding40">
     <div class="container">
@@ -89,97 +179,7 @@
     </div>
   </div>
   <!-- Clients Offers End -->
-  <!--? Visit Our Tailor Start -->
-  <section class="visit-tailor-area fix">
-    {% for a in about  %}
-    <div class="tailor-offers" data-background="{{a.image.url}}"></div>
-    <div class="tailor-details">
-      <h2 style="text-wrap: balance;">{{a.main_title}}</h2>
-      <p class="pera-top">{{a.main_top}}</p>
-      <p class="pera-bottom">{{a.main_bottom}}</p>
-      {% endfor %}
-      <a href="{% url 'about' %}" class="btn">More About Us</a>
-    </div>
-  </section>
-  <!-- Visit Our Tailor End -->
-  <!--? Services Area Start -->
-  <section class="categories-area section-padding40">
-    <div class="container">
-      <!-- section Tittle -->
-      <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-6 col-md-7 col-sm-9">
-          <div class="section-tittle text-center mb-60">
-            <h2>Why use our service?</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        {% for w in whyUs %}
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="single-cat mb-50 wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".2s"
-          >
-            <div class="cat-icon">
-              <img src="{{w.icon_1.url}}" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>{{w.title_1}}</h5>
-              <p>{{w.text_1}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="single-cat mb-50 wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".2s"
-          >
-            <div class="cat-icon">
-              <img src="{{w.icon_2.url}}" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>{{w.title_2}}</h5>
-              <p>{{w.text_2}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="single-cat mb-50 wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".2s"
-          >
-            <div class="cat-icon">
-              <img src="{{w.icon_3.url}}" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>{{w.title_3}}</h5>
-              <p>{{w.text_3}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="single-cat mb-50 wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".2s"
-          >
-            <div class="cat-icon">
-              <img src="{{w.icon_4.url}}" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>{{w.title_4}}</h5>
-              <p>{{w.text_4}}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  <!--? Services Area End -->
+  
   <div class="container">
     <h1 class="text-center mb-30">Gallery</h1>
     <div class="gallery-container">
