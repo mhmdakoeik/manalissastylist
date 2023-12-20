@@ -36,9 +36,11 @@
                 </p>
               </div>
               <div class="testimonial-founder d-flex align-items-center" style="gap:30px">
+                {% if fb.avatar %}
                 <div class="founder-img">
                   <img src="{{fb.avatar.url}}" alt="" style="width:60px;height:auto;object-fit:cover;border-radius:50%"/>
                 </div>
+                {% endif %}
                 <div class="founder-text">
                   <span>{{fb.name}}</span>
                 </div>

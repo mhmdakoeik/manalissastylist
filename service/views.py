@@ -8,8 +8,14 @@ import uuid
 
 
 @receiver([pre_delete, pre_save], sender=Feedback)
-def delete_image_files_feedback(sender, instance, **kwargs):
-    instance.avatar.delete(save=False)
+def delete_or_update_image_files_about(sender, instance, **kwargs):
+    try:
+        old_instance = Feedback.objects.get(pk=instance.pk)
+    except Feedback.DoesNotExist:
+        return  # Handle the case where the instance doesn't exist
+
+    if old_instance.avatar != instance.avatar:
+        old_instance.avatar.delete(save=False)
 
 @receiver([pre_delete, pre_save], sender=Service)
 def delete_or_update_image_files_service(sender, instance, **kwargs):
