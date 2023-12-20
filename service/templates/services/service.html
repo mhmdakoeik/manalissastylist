@@ -32,11 +32,6 @@
 </div>
   <main class="main">
     <article>
-      <div class="d-flex justify-content-start">
-        <button type="button" class="header-btn" data-toggle="modal" data-target="#exampleModal">
-          Book Now
-        </button>
-      </div>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -83,11 +78,11 @@
         {% endif %}
       </div>
       {% if service.what_include %}
-      <div class="highlight">
-        <h3 style="color:black">💡 What Includes</h3>
+      <div class="highlight" style="background-color:#F2E1D9;width:100%;">
+        <h3 style="color:black;font-size:x-large">💡 What Includes</h3>
         <ul class="m-0 list-unstyled">
           {% for line in service.what_include.splitlines %}
-              <li class="d-flex align-items-center justify-content-start" style="color:#98a0b3">
+              <li class="d-flex align-items-center justify-content-start" style="color:#98a0b3;font-size:medium">
                 <img src="{% static 'img/icon/clothes-hanger.png' %}" style="width:20px;margin-block:unset !important;" class="mr-4">
                 {{ line }}
               </li>
@@ -96,6 +91,11 @@
       </div>
       {% endif %}
     </article>
+    <div class="d-flex justify-content-center">
+      <button type="button" class="header-btn" data-toggle="modal" data-target="#exampleModal">
+        Book Now
+      </button>
+    </div>
     
     {% comment %} <article class="last">
       <div class="first">
