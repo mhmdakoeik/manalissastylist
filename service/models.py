@@ -11,6 +11,7 @@ class Service(models.Model):
     long_description = models.TextField(null=True,blank=True)
     image_1 = models.ImageField(null=True,blank=True,upload_to='uploads/services/')
     what_include = models.TextField(null=True,blank=True)
+    priority = models.Integer(null=True,blank=False)
     
     def __str__(self):
         return str(self.title)
