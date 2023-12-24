@@ -55,7 +55,22 @@
                         <div class="offers-cap">
                             <span>{{ forloop.counter }}</span>
                             <h3 style="font-size:25px"><a href="{% url "service" service.id %}">{{service.title}}</a></h3>
-                            <p>{{service.short_description|slice:'80'}}.</p>
+                            {% with service.short_description|slice:'80' as sliced_description %}
+                                {% if service.short_description|length > 80 %}
+                                    {% spaceless %}
+                                        {% for char in sliced_description|reverse %}
+                                            {% if char == ' ' %}
+                                                {% with service.short_description|slice:'0:'~forloop.counter0|safe as truncated_description %}
+                                                    <p>{{ truncated_description }}</p>
+                                                {% endwith %}
+                                                {% break %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endspaceless %}
+                                {% else %}
+                                    <p>{{ service.short_description }}</p>
+                                {% endif %}
+                            {% endwith %}
                         </div>
                     </div>
                 </div>
@@ -67,7 +82,7 @@
                     object-fit: cover;width:700px;"></a></div>
           
                   <div class="item_txt">
-                      <div class="item_txt__wrapper" style="display:flex;flex-direction:column;gap:20px"><h2 style="font-size:45px;font-family:'Dancing Script'">SIGNATURE SERVICE</h2><h4 style="font-size:x-large;color:rosybrown;">Ever find yourself staring at your closet, convinced you have nothing to wear? Or perhaps your wardrobe is bursting, yet you're unsure of your true style? Enter the "Virtual Wardrobe Edit" your answer to fashion confusion, and an excellent choice, especially if you're miles away!
+                      <div class="item_txt__wrapper" style="display:flex;flex-direction:column;gap:20px"><h2 style="font-size:45px;font-family:'Dancing Script'">MY SIGNATURE SERVICE</h2><h4 style="font-size:x-large;color:rosybrown;">Ever find yourself staring at your closet, convinced you have nothing to wear? Or perhaps your wardrobe is bursting, yet you're unsure of your true style? Enter the "Virtual Wardrobe Edit" your answer to fashion confusion, and an excellent choice, especially if you're miles away!
                 </h4><a class="btn" href="http://167.99.131.37/services/6b7b2986-0642-43cf-bdc1-3de4e41fd538">View Details</a></div>
                   </div>
               </div>
