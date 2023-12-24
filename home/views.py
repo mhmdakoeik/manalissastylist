@@ -39,7 +39,7 @@ def handle_image_files(sender, instance, **kwargs):
     except Gallery.DoesNotExist:
         return  # If the instance does not exist, exit the function
     # Loop through each icon field and delete the old file if it has been updated
-    for i in range(1, 6):
+    for i in range(1, 4):
         field_name = f'image_{i}'
         old_image = getattr(old_instance, field_name)
         new_image = getattr(instance, field_name)
