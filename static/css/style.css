@@ -7235,3 +7235,12 @@ del {
         width: 350px !important;
     }
 }
+
+.services-p a i{
+    transform: none;
+    color: black;
+    margin-left: 10px;
+}
+.services-p a i:hover{
+    color: #be9278;
+}
