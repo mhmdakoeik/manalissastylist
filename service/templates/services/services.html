@@ -61,6 +61,16 @@
                 </div>
                 {% endfor %}
             </div>
+            <div class="item_wrap image_left" style="display:flex;gap:60px">
+                <div class="item_img"><a href=""><img src="{% static 'img/gallery/my_signature.JPG' %}" alt="" style="    height: 100%;
+                    width: -webkit-fill-available;
+                    object-fit: cover;width:700px;"></a></div>
+          
+                  <div class="item_txt">
+                      <div class="item_txt__wrapper" style="display:flex;flex-direction:column;gap:20px"><h2 style="font-size:45px;font-family:'Dancing Script'">SIGNATURE SERVICE</h2><h4 style="font-size:x-large;color:rosybrown;">Ever find yourself staring at your closet, convinced you have nothing to wear? Or perhaps your wardrobe is bursting, yet you're unsure of your true style? Enter the "Virtual Wardrobe Edit" your answer to fashion confusion, and an excellent choice, especially if you're miles away!
+                </h4><a class="btn" href="http://167.99.131.37/services/6b7b2986-0642-43cf-bdc1-3de4e41fd538">View Details</a></div>
+                  </div>
+              </div>
             {% include "pagination.html" with queryset=services custom_range=custom_range %}
         </div>
     </div>
@@ -68,7 +78,7 @@
     <section class="section_homepage section_image-with-text" style="margin-top:40px">
         <div class="container">
           <div class="item_wrap image_left" style="display:flex;gap:60px">
-            <div class="item_img"><a href="/collections/all"><img src="{% static 'img/gallery/signature.png' %}" alt="" style="    height: 100%;
+            <div class="item_img"><a href=""><img src="{% static 'img/gallery/my_signature.JPG' %}" alt="" style="    height: 100%;
                 width: -webkit-fill-available;
                 object-fit: cover;width:700px;"></a></div>
       
