@@ -32,6 +32,12 @@
 </div>
   <main class="main">
     <article>
+      <p class="mt-50">
+        {{service.short_description}}
+      </p>
+      <img src="{{service.main_image.url}}" style="height:500px;object-fit:contain"/>
+    </article>
+    <article>
       <p style="font-size:25px;color:grey">
         {% if service.long_description %}
           {{ service.long_description|linebreaksbr }}
