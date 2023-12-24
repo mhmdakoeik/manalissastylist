@@ -7232,6 +7232,6 @@ del {
 }
 @media only screen and (max-width:700px){
     .item_img img{
-        width: 350px;
+        width: 350px !important;
     }
 }
