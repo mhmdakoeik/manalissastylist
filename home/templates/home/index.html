@@ -178,7 +178,7 @@
               <img src="{{s.main_image.url}}" alt="" />
             </div>
             <div class="offers-cap">
-              <span>1</span>
+              <span>{{ forloop.counter }}</span>
               <h3><a href="{% url 'service' s.id %}">{{s.title}}</a></h3>
               <p>
                 {{s.short_description|slice:"100"}}
