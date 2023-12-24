@@ -40,7 +40,8 @@ def delete_or_update_image_files_service(sender, instance, **kwargs):
             instance.image_1.delete(save=False)
 
 def services(request):
-    all_services = Service.objects.all().order_by('priority')
+    excluded_service_name = 'Signature Service'  
+    all_services = Service.objects.exclude(title=excluded_service_name).order_by('priority')
     custom_range, paginated_services = paginateServices(request, all_services, 3)
     context = {'services': paginated_services, 'custom_range': custom_range}
     return render(request, 'services/services.html', context)
