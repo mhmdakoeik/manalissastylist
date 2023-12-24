@@ -2957,8 +2957,8 @@ hr {
     .slider-height {
         min-height: 600px;
         background-position: center center;
-        background-position-x:unset;
-        background-position-y:unset;
+        background-position-x:unset !important;
+        background-position-y:unset !important;
     }
 }
 
