@@ -7239,7 +7239,8 @@ del {
 .services-p a i{
     transform: none !important;
     color: black !important;
-    margin-left: 10px;
+    margin: 5px 0px 0px 15px;
+    font-size: 15px !important;
 }
 .services-p a i:hover{
     color: #be9278 !important;
