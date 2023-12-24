@@ -7224,3 +7224,9 @@ del {
     z-index: 2;
 }
 
+@media only screen and (min-width:2000px){
+    body{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
