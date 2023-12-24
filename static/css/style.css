@@ -2957,14 +2957,14 @@ hr {
     .slider-height {
         min-height: 600px;
         background-position: center center;
-        background-position-x:unset !important;
-        background-position-y:unset !important;
     }
 }
 
 @media (max-width: 575px) {
     .slider-height {
-        min-height: 600px
+        min-height: 600px;
+        background-position-x:unset !important;
+        background-position-y:unset !important;
     }
 }
 
