@@ -55,7 +55,8 @@
                         <div class="offers-cap">
                             <span>{{ forloop.counter }}</span>
                             <h3 style="font-size:25px"><a href="{% url "service" service.id %}">{{service.title}}</a></h3>
-                            <p>{{service.short_description|slice:'100'}}...<a href="{% url 'service' service.id %}"><i class="arrow-forward"></i></a></p>
+                            <p>{{service.short_description|slice:'100'}}...</p>
+                            <a href="{% url 'service' service.id %}"><i class="arrow-forward"></i></a>
                         </div>
                     </div>
                 </div>
