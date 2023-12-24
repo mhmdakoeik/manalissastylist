@@ -36,8 +36,7 @@ class Gallery(models.Model):
     image_1 = models.ImageField(null=True,blank=True,upload_to='uploads/homeGallery/')
     image_2 = models.ImageField(null=True,blank=True,upload_to='uploads/homeGallery/')
     image_3 = models.ImageField(null=True,blank=True,upload_to='uploads/homeGallery/')
-    image_4 = models.ImageField(null=True,blank=True,upload_to='uploads/homeGallery/')
-    image_5 = models.ImageField(null=True,blank=True,upload_to='uploads/homeGallery/')
+
 
     def __str__(self):
         return str(self.created)
