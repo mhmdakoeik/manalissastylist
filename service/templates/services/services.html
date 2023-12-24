@@ -55,22 +55,7 @@
                         <div class="offers-cap">
                             <span>{{ forloop.counter }}</span>
                             <h3 style="font-size:25px"><a href="{% url "service" service.id %}">{{service.title}}</a></h3>
-                            {% with service.short_description|slice:'80' as sliced_description %}
-                                {% if service.short_description|length > 80 %}
-                                    {% spaceless %}
-                                        {% for char in sliced_description|reverse %}
-                                            {% if char == ' ' %}
-                                                {% with service.short_description|slice:'0:'~forloop.counter0|safe as truncated_description %}
-                                                    <p>{{ truncated_description }}</p>
-                                                {% endwith %}
-                                                {% break %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% endspaceless %}
-                                {% else %}
-                                    <p>{{ service.short_description }}</p>
-                                {% endif %}
-                            {% endwith %}
+                            <p>{{service.short_description|slice:'100'}}...<a href="{% url 'service' service.id %}"><i class="arrow-forward"></i></a></p>
                         </div>
                     </div>
                 </div>
