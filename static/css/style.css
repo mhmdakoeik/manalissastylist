@@ -7246,7 +7246,7 @@ del {
     color: #be9278 !important;
 }
 .waviy-group {
-    background-color:  linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);
+    background:  linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);
     display: flex;
     justify-content: center;
     align-items: center;
