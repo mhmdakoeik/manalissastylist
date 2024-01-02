@@ -3,8 +3,8 @@
 
 {% block content %}
     {% include "header.html" %}
-    <main>
-        <!--? slider Area Start-->
+    <img src="{% static 'img/gallery/blog_comming_soon.jpeg' %}" alt="">
+    {% comment %} <main>
         <div class="slider-area position-relative">
             <div class="slider-active">
                 <div class="single-slider position-relative hero-overly slider-height2  d-flex align-items-center" data-background="">
@@ -23,16 +23,10 @@
                         </div>
                     </div>
                 </div>
-                {% comment %} <div class="hero-img hero-img2">
-                    <img src="{% static 'img/gallery/hero_image.jpg' %}" style="width: 626px;
-                    height: 340px;" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
-                </div> {% endcomment %}
             </div>
         </div>
     </div>
         
-        <!-- slider Area End-->
-        <!--? Blog Area Start-->
         <section class="blog_area section-padding">
             <div class="container">
                 <div class="row">
@@ -58,7 +52,6 @@
                             {% endfor %}
                             <nav class="blog-pagination justify-content-center d-flex">
                                 <ul class="pagination">
-                                    <!-- Previous Page Link -->
                                     {% if blogs.has_previous %}
                                         <li class="page-item">
                                             <a href="?page={{ blogs.previous_page_number }}{% if search_query %}&search_query={{ search_query }}{% endif %}" class="page-link" aria-label="Previous">
@@ -67,14 +60,12 @@
                                         </li>
                                     {% endif %}
                             
-                                    <!-- Page Numbers -->
                                     {% for num in custom_range %}
                                         <li class="page-item {% if blogs.number == num %}active{% endif %}">
                                             <a href="?page={{ num }}{% if search_query %}&search_query={{ search_query }}{% endif %}" class="page-link">{{ num }}</a>
                                         </li>
                                     {% endfor %}
                             
-                                    <!-- Next Page Link -->
                                     {% if blogs.has_next %}
                                         <li class="page-item">
                                             <a href="?page={{ blogs.next_page_number }}{% if search_query %}&search_query={{ search_query }}{% endif %}" class="page-link" aria-label="Next">
@@ -113,13 +104,11 @@
                                             type="submit">Search</button>
                                 </form>
                             </aside>
-                            <!-- You can add more widgets here if needed -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Blog Area End -->
-    </main>
-    {% include "footer.html" %}
+    </main> {% endcomment %}
+    {% comment %} {% include "footer.html" %} {% endcomment %}
 {% endblock %}
