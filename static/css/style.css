@@ -7245,3 +7245,6 @@ del {
 .services-p a i:hover{
     color: #be9278 !important;
 }
+.blog-comming-soon{
+    background: url(../img/gallery/blog_comming_soon.jpeg);
+}
