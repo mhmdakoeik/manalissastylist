@@ -7246,5 +7246,6 @@ del {
     color: #be9278 !important;
 }
 .blog-comming-soon{
-    background: url(../img/gallery/blog_comming_soon.jpeg);
+    background: url('../img/gallery/blog_comming_soon.jpeg') no-repeat center center/cover;
+    border: none;
 }
