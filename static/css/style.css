@@ -7332,11 +7332,3 @@ del {
   z-index:2;
   background-color:hsla(0,0%,100%,.8)
 }
-.form-subscribe .btn
-{
-  border-top-right-radius:36px;
-  border-bottom-right-radius:36px;
-  background:#7ec855;
-  border-color:#7ec855;
-  height:46.5px;
-}
