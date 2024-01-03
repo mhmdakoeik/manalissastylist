@@ -60,7 +60,7 @@
     </h2>
     <h6 class="font-alt" style="color:#black;">To our Newsletter</h6>
     <br><br>
-    <form class="form-subscribe" action="{% url 'newsletter' %}">
+    <form class="form-subscribe" action="{% url 'newsletter' %}" method="POST">
       {% csrf_token %}
       <div class="input-group">
         <input type="text" class="form-control input-lg" placeholder="Your eamil address" value="{{ form.email.value }}">
