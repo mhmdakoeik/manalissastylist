@@ -7305,3 +7305,9 @@ del {
     margin: 0 auto;
     color: currentColor;
 }
+.footer-social svg{
+    fill : #BE9278;
+}
+.footer-social svg:hover{
+    fill: white;
+}
