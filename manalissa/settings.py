@@ -287,7 +287,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'info@manalissa.com'
-EMAIL_HOST_PASSWORD = 'smxr kltr couo vntg'
+EMAIL_HOST_PASSWORD = 'kipo pmkl sdmg tsbx'
 
 
 
