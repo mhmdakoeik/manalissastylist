@@ -7311,3 +7311,32 @@ del {
 .footer-social svg:hover{
     fill: white;
 }
+
+.form-subscribe
+{
+  max-width:600px;
+  margin:0 auto
+}
+.form-subscribe .form-control
+{
+  background-color:hsla(0,0%,100%,.8);
+  padding-left:24px;
+  padding-right:24px;
+  letter-spacing:1px;
+  border:none;
+  border-top-left-radius:36px;
+  border-bottom-left-radius:36px
+}
+.form-subscribe .form-control.focus,.form-subscribe .form-control:focus
+{
+  z-index:2;
+  background-color:hsla(0,0%,100%,.8)
+}
+.form-subscribe .btn
+{
+  border-top-right-radius:36px;
+  border-bottom-right-radius:36px;
+  background:#7ec855;
+  border-color:#7ec855;
+  height:46.5px;
+}
