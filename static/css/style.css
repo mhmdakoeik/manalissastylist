@@ -7331,3 +7331,14 @@ del {
   z-index:2;
   background-color:hsla(0,0%,100%,.8)
 }
+
+@media only screen and (max-width:600px){
+    .form-subscribe .input-group{
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .form-subscribe .form-control{
+        width: 100%;
+    }
+}
