@@ -7,4 +7,4 @@ class NewsLetter(models.Model):
     email = models.CharField(max_length=500,blank=True, null=True)
 
     def __str__(self):
-        return self.email
+        return str(self.email)
