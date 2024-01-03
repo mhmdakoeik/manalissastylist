@@ -7320,8 +7320,7 @@ del {
 .form-subscribe .form-control
 {
   background-color:hsla(0,0%,100%,.8);
-  padding-left:24px;
-  padding-right:24px;
+  padding: 34px;
   letter-spacing:1px;
   border:none;
   border-top-left-radius:36px;
