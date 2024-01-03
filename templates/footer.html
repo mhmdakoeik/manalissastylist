@@ -60,9 +60,10 @@
     </h2>
     <h6 class="font-alt" style="color:#black;">To our Newsletter</h6>
     <br><br>
-    <form class="form-subscribe" action="#">
+    <form class="form-subscribe" action="{% url 'newsletter' %}">
+      {% csrf_token %}
       <div class="input-group">
-        <input type="text" class="form-control input-lg" placeholder="Your eamil address">
+        <input type="text" class="form-control input-lg" placeholder="Your eamil address" value="{{ form.email.value }}">
         <span class="input-group-btn">
           <button class="btn btn-success btn-lg" type="submit" >Subscribe</button>
         </span>
