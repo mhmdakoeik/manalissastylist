@@ -63,7 +63,7 @@
     <form class="form-subscribe" action="{% url 'newsletter' %}" method="POST">
       {% csrf_token %}
       <div class="input-group">
-        <input type="email" class="form-control input-lg" placeholder="Your eamil address" value="{{ form.email.value }}">
+        <input type="email" class="form-control input-lg" placeholder="Your email address" value="{{ form.email }}">
         <span class="input-group-btn">
           <input class="btn btn-success btn-lg" type="submit" value="Subscribe">
         </span>
