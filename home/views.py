@@ -52,3 +52,6 @@ def home(request):
     gallery = Gallery.objects.all()
     context = {'slider':slider,'whyUs':whyUs,'gallery':gallery}
     return render(request, "home/index.html",context) 
+
+def terms(request):
+    return render(request, "terms/terms.html")
