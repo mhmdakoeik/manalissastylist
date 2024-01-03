@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def terms(request):
-    return render(request, "manalissa/terms.html") 
+    return render(request, "terms/terms.html") 
