@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
+from . import views
 
 from manalissa import settings
 
@@ -28,6 +29,7 @@ urlpatterns = [
     path('services/',include('service.urls')),
     path('gallery',include('gallery.urls')),
     path('blogs',include('blog.urls')),
+    path('terms',views.terms,name='terms')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
