@@ -2934,10 +2934,10 @@ hr {
 }
 
 .slider-height {
-    min-height: 850px;
+    min-height: 1500px;
     background-repeat: no-repeat;
-    background-position-x: -100px;
-    background-position-y: -300px; 
+    /* background-position-x: -100px; */
+    background-position-y: -600px; 
     background-size: cover
 }
 

@@ -7,9 +7,9 @@
       <!-- Single Slider -->
       <div
         class="single-slider position-relative hero-overly slider-height d-flex align-items-center"
-        data-background="{% static 'img/gallery/slide7.jpeg' %}"
+        data-background="{{s.image.url}}"
       >
-        <div class="container">
+        <div class="container" style="position: absolute;top: inherit;left: 5rem;">
           <div class="row">
             <div class="col-xl-6 col-lg-6">
               <div class="hero-caption">
@@ -44,7 +44,7 @@
           </div>
         </div>
         <!-- Left img -->
-        <div class="hero-img">
+        {% comment %} <div class="hero-img">
           <img
             src="{{s.image.url}}"
             alt=""
@@ -52,7 +52,7 @@
             data-transition-duration="5s"
             style="width: 600px"
           />
-        </div>
+        </div> {% endcomment %}
       </div>
     </div>
   </div>
