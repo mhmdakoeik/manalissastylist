@@ -6101,6 +6101,11 @@ hr {
     background: none;
 }
 
+.slider-height2.hero-overlay::before{
+    background: linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);
+    opacity: 0.9;
+}
+
 .sample-text-area {
     background: #fff;
     padding: 100px 0 70px 0
