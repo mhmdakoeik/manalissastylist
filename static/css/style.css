@@ -6094,8 +6094,9 @@ hr {
     background: -webkit-linear-gradient(left, rgba(16, 26, 48, 0.7) 0%, rgba(16, 26, 48, 0.7) 12%, #101a31 91%, #101a31 100%);
     background: linear-gradient(to right, rgba(16, 26, 48, 0.7) 0%, rgba(16, 26, 48, 0.7) 12%, #101a31 91%, #101a31 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3101a30', endColorstr='#101a31', GradientType=1) */
-    background: linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);
-    opacity: 0.9;
+    /* background: linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);
+    opacity: 0.9; */
+    background: none;
 }
 
 .sample-text-area {
