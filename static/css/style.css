@@ -3015,7 +3015,8 @@ hr {
     font-weight: 600;
     margin-bottom: 14px;
     line-height: 1.1;
-    display: block
+    display: block;
+    color: #967059;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
@@ -3059,7 +3060,8 @@ hr {
     display: block;
     color: #fff;
     font-size: 16px;
-    padding-right: 50px
+    padding-right: 50px;
+    color: #967059;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
