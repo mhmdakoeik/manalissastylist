@@ -17,6 +17,6 @@ function removeActiveClasses() {
 const intervalId = setInterval(toggleActivePanel, 2000); // Change 2000 to the desired interval in milliseconds
 
 // Optionally, you can stop the interval after a certain period
-setTimeout(() => {
-    clearInterval(intervalId);
-}, 10000);
+// setTimeout(() => {
+//     clearInterval(intervalId);
+// }, 10000);
