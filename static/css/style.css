@@ -3897,6 +3897,7 @@ hr {
 
 @media (max-width: 575px) {
     .home-cont {
+        top:3rem;
         left:2rem;
         font-size: 20px;
     }
