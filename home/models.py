@@ -23,9 +23,6 @@ class WhyChooseOurServices(models.Model):
     icon_3 = models.ImageField(null=True,blank=True,upload_to='uploads/whyOurServices/')
     title_3 = models.CharField(null=True,blank=True,max_length=200)
     text_3 = models.CharField(null=True,blank=True,max_length=200)
-    icon_4 = models.ImageField(null=True,blank=True,upload_to='uploads/whyOurServices/')
-    title_4 = models.CharField(null=True,blank=True,max_length=200)
-    text_4 = models.CharField(null=True,blank=True,max_length=200)
 
     def __str__(self):
         return str(self.created)
