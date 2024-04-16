@@ -24,7 +24,7 @@
                 <h1
                   data-animation="fadeInLeft"
                   data-delay=".4s"
-                  style="font-size: 38px !important"
+                  style="font-size: 28px !important"
                 >
                   {{s.main_title}}
                 </h1>
@@ -32,13 +32,13 @@
                   {{s.subtitle}}
                 </p>
                 <!-- Hero Btn -->
-                <a
+                {% comment %} <a
                   href="{% url 'services' %}"
                   class="btn"
                   data-animation="fadeInLeft"
                   data-delay=".8s"
                   >Our Services</a
-                >
+                > {% endcomment %}
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
     </div>
     <div class="row">
       {% for w in whyUs %}
-      <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div
           class="single-cat mb-50 wow fadeInUp"
           data-wow-duration="1s"
@@ -94,12 +94,12 @@
             <img src="{{w.icon_1.url}}" alt="" />
           </div>
           <div class="cat-cap">
-            <h5>{{w.title_1}}</h5>
+            <h5 class="text-center">{{w.title_1}}</h5>
             <p>{{w.text_1}}</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div
           class="single-cat mb-50 wow fadeInUp"
           data-wow-duration="1s"
@@ -109,12 +109,12 @@
             <img src="{{w.icon_2.url}}" alt="" />
           </div>
           <div class="cat-cap">
-            <h5>{{w.title_2}}</h5>
+            <h5 class="text-center">{{w.title_2}}</h5>
             <p>{{w.text_2}}</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div
           class="single-cat mb-50 wow fadeInUp"
           data-wow-duration="1s"
@@ -124,23 +124,8 @@
             <img src="{{w.icon_3.url}}" alt="" />
           </div>
           <div class="cat-cap">
-            <h5>{{w.title_3}}</h5>
+            <h5 class="text-center">{{w.title_3}}</h5>
             <p>{{w.text_3}}</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div
-          class="single-cat mb-50 wow fadeInUp"
-          data-wow-duration="1s"
-          data-wow-delay=".2s"
-        >
-          <div class="cat-icon">
-            <img src="{{w.icon_4.url}}" alt="" />
-          </div>
-          <div class="cat-cap">
-            <h5>{{w.title_4}}</h5>
-            <p>{{w.text_4}}</p>
           </div>
         </div>
       </div>
@@ -157,9 +142,9 @@
       object-fit: cover;width:700px"></a></div>
 
 		<div class="item_txt" style="display:flex;flex-direction:column;justify-content:space-between;">
-			<div class="item_txt__wrapper" style="display:flex;flex-direction:column;gap:20px"><h2 style="font-size:42px;font-family:'Dancing Script'">Elevate Your Wardrobe In-Person & Virtually
-      </h2><h4 style="font-size:larger;color:rosybrown;text-align:justify">Transform your world with our unique blend of virtual and in-person styling services! Experience the convenience of virtual consultations, and for those seeking a more personalized touch, all our virtual services are also available in person upon request.<br/> Our calendar is open, featuring updated locations and available timings, ensuring your style journey is both flexible and tailored. Whether we connect through screens or in the same space, let's curate a wardrobe that speaks volumes about your unique style! 
-      </h4>
+			<div class="item_txt__wrapper" style="display:flex;flex-direction:column;gap:20px"><h2 style="font-size:28px;font-family:'Arimo';color:#967059;">Elevate Your Wardrobe In-Person & Virtually
+      </h2><p style="font-size:larger;color:black;text-align:justify">Transform your world with our unique blend of virtual and in-person styling services! Experience the convenience of virtual consultations, and for those seeking a more personalized touch, all our virtual services are also available in person upon request.<br/> Our calendar is open, featuring updated locations and available timings, ensuring your style journey is both flexible and tailored. Whether we connect through screens or in the same space, let's curate a wardrobe that speaks volumes about your unique style! 
+      </p>
     </div>
     <button type="button" class="btn" data-animation="fadeInLeft" data-delay=".8s" data-toggle="modal" data-target="#exampleModal">
       Book Now

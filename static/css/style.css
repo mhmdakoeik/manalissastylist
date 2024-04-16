@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 .white-bg {
     background: #ffffff
 }
@@ -50,8 +51,8 @@
     color: #BE9278 !important;
     display: inline-block;
     padding: 18px 44px;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 14px;
+    font-family: "Arimo";
+    font-size: 18px;
     font-weight: 400;
     border: 0;
     border: 1px solid #BE9278;
@@ -129,10 +130,10 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Arimo";
     font-weight: normal;
     font-style: normal;
-    font-size: 16px
+    font-size: 18px
 }
 
 h1,
@@ -141,18 +142,19 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Arimo";
     color: #101A31;
     margin-top: 0px;
     font-style: normal;
     font-weight: 500;
-    text-transform: normal
+    text-transform: normal;
+    font-size:28px !important;
 }
 
 p {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Arimo";
     color: #10285d;
-    font-size: 16px;
+    font-size: 18px !important;
     line-height: 30px;
     margin-bottom: 15px;
     font-weight: normal
@@ -393,7 +395,30 @@ hr {
     background: #ff3500
 }
 
-.btn {
+.btn{
+    border: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    border-radius: 0px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    background-size: 200%;
+    transition: 0.6s;
+    background-position: right;
+    background: #88624b;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn3 {
     border: none;
     padding: 24px 47px;
     text-transform: uppercase;
@@ -407,7 +432,8 @@ hr {
     background-size: 200%;
     transition: 0.6s;
     background-image: linear-gradient(to left, #c79f88, #b6876b, #c9a48f);
-    background-position: right
+    background-position: right;
+    height:100%;
 }
 
 .btn:hover {
@@ -3445,7 +3471,8 @@ hr {
 
 .visit-tailor-area .tailor-details p.pera-bottom {
     margin-bottom: 41px;
-    font-size: 14px
+    font-size: 14px;
+    color:#aa8169;
 }
 
 @media (max-width: 575px) {
