@@ -3895,8 +3895,15 @@ hr {
     z-index: 1
 }
 
+@media (max-width: 575px) {
+    .home-cont {
+        left:2rem;
+        font-size: 20px;
+    }
+}
+
 .categories-area .single-cat .cat-icon img {
-    margin: 0 auto;
+    margin: 10px auto;
     display: block;
     height: 100px;
     width: auto;
