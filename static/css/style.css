@@ -3896,8 +3896,10 @@ hr {
 }
 
 .categories-area .single-cat .cat-icon img {
-    margin-bottom: 26px;
-    display: block
+    margin: 0 auto;
+    display: block;
+    height: 100px;
+    width: auto;
 }
 
 .categories-area .single-cat .cat-cap h5 {
