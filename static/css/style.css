@@ -7269,6 +7269,10 @@ del {
     margin-bottom: 10px
 }
 
+.item_wrap.image_left{
+    flex-direction: row-reverse;
+}
+
 @media only screen and  (max-width: 750px) {
     .about-text{
         display: block;
