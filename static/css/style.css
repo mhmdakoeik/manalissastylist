@@ -2462,6 +2462,15 @@ hr {
     padding-bottom: 170px
 }
 
+.title{
+    background-image: linear-gradient(to left, #c79f88, #b6876b, #c9a48f);
+    padding: 2rem;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .services-padding {
         padding-top: 145px;
@@ -3040,7 +3049,7 @@ hr {
     font-size: 76px;
     font-weight: 600;
     margin-bottom: 14px;
-    line-height: 1.1;
+    line-height: 1.5;
     display: block;
     color: #967059;
 }
@@ -3821,8 +3830,16 @@ hr {
 
 .categories-area {
     padding-top: 100px;
-    padding-bottom: 50px;
-    position: relative
+    padding-bottom: 100px;
+    position: relative;
+    background-image: linear-gradient(to left, #c79f88, #b6876b, #c9a48f);
+    margin-top: 50px;
+}
+
+.categories-area .container{
+    background: white;
+    padding: 4rem;
+    border-radius: .5rem;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -3851,7 +3868,7 @@ hr {
     content: "";
     width: 50px;
     height: 100%;
-    background: #fff;
+    /* background: #fff; */
     bottom: 0;
     right: 0;
     top: 0
