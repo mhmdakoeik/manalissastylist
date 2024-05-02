@@ -3851,15 +3851,13 @@ hr {
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .categories-area {
-        padding-top: 65px;
-        padding-bottom: 0px
+        padding:3rem 5rem 3rem 5rem;
     }
 }
 
 @media (max-width: 575px) {
     .categories-area {
-        padding-top: 65px;
-        padding-bottom: px
+        padding:3rem 5rem 3rem 5rem;
     }
 }
 
@@ -4326,7 +4324,7 @@ hr {
 }
 
 .footer-area .footer-tittle ul li a:hover {
-    color: #BE9278;
+    color: white;
     text-decoration: underline
 }
 
@@ -4406,7 +4404,7 @@ hr {
 }
 
 .footer-social a {
-    color: #BE9278;
+    color: white;
     background: rgba(103, 133, 255, 0.08);
     width: 40px;
     height: 40px;
@@ -4431,12 +4429,34 @@ hr {
     -o-transform: rotateY(0deg)
 }
 
+.footer-social a svg {
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    display: inline-block;
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg)
+}
+
+
 .footer-social a:hover {
     color: #fff;
     background: #BE9278
 }
 
 .footer-social a:hover i {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg)
+}
+
+.footer-social a:hover svg{
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -7406,5 +7426,9 @@ del {
     }
     .form-subscribe .form-control{
         width: 100%;
+    }
+    .section_homepage{
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
     }
 }

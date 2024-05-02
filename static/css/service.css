@@ -130,9 +130,9 @@
     margin: var(--center-it);
     margin-bottom: var(--spacing-m);
     background-color: var(--accent-10);
-    max-width: var(--text-width-medium);
+    /* max-width: var(--text-width-medium); */
     border-radius: var(--radius-s);
-    padding: var(--spacing-m);
+    padding: 5rem 15rem 5rem 15rem;
     width: 50%;
 }
 
@@ -146,7 +146,7 @@
 
 .main li {
     padding-bottom: var(--spacing-s);
-    margin-left: var(--spacing-xs);
+    /* margin-left: var(--spacing-xs); */
     font-size: var(--paragraph);
     color: var(--emphasis);
     list-style: square;

@@ -47,17 +47,17 @@
     
     <article class="highlight-section">
       <div class="first">
-        {% if service.image_1 %}
+        {% comment %} {% if service.image_1 %}
           <img src="{{ service.image_1.url }}" alt="Director Andrei Tarkovsky with a movie camera" style="width: 350px;"/>
-        {% endif %}
+        {% endif %} {% endcomment %}
       </div>
       {% if service.what_include %}
-      <div class="highlight" style="background-color:#F2E1D9;width:100%;">
-        <h3 style="color:black;font-size:x-large;font-family:'Pacifico';font-weight:200;">🌸 What To Expect</h3>
+      <div class="highlight" style="background:linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);width:100%;">
+        <h3 style="color:White;font-size:x-large;font-family:'arial';font-weight:200;">What To Expect</h3>
         <ul class="m-0 list-unstyled">
           {% for line in service.what_include.splitlines %}
-              <li class="d-flex align-items-center justify-content-start" style="color:#98a0b3;font-size:large">
-                <img src="{% static 'img/icon/hanger-icon.jpg' %}" style="width:40px;margin-block:unset !important;" class="mr-4">
+              <li class="d-flex align-items-center justify-content-start" style="color:white;font-size:large">
+                {% comment %} <img src="{% static 'img/icon/hanger-icon.jpg' %}" style="width:40px;margin-block:unset !important;" class="mr-4"> {% endcomment %}
                 {{ line }}
               </li>
           {% endfor %}
