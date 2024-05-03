@@ -140,6 +140,9 @@
     .article_special img{
         height: auto;
     }
+    .article_special article p{
+        margin-bottom: 10px;
+    }
 }
 
 .main .highlight {
