@@ -147,6 +147,15 @@
     .article_special article p{
         margin-bottom: 10px !important;
     }
+    .main.special .article_special {
+        flex-direction: column;
+    }
+    .main.special .article_special img{
+        width: 100% !important;
+    }
+    .main.special .article_special article{
+        left: 0 !important;
+    }
 }
 
 .main .highlight {
