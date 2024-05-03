@@ -126,6 +126,16 @@
     gap: 20px;
 }
 
+@media (max-width:800px){
+    .highlight.special{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .highlight.special img{
+        width: 100% !important;
+    }
+}
+
 .main .highlight {
     margin: var(--center-it);
     margin-bottom: var(--spacing-m);
