@@ -134,6 +134,12 @@
     .highlight.special img{
         width: 100% !important;
     }
+    .article_special article{
+        position: inherit;
+    }
+    .article_special img{
+        height: auto;
+    }
 }
 
 .main .highlight {
