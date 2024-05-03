@@ -33,14 +33,14 @@
   </div>
 </div>
 </div>
-  <main class="main" style="max-width:95%">
+  <main class="main special">
     <article>
       <p class="mt-50" style="font-size:25px;color:grey">
         {{service.short_description}}
       </p>
     </article>
     <article class="article_special" style="margin:0 auto; position:relative;display:flex;justify-content:center">
-        <img src="{{service.main_image.url}}" style="height:700px; width:100%; object-fit:contain"/>
+        <img src="{{service.main_image.url}}" style="height:700px; width:90%; object-fit:cover"/>
         <article  style="position:absolute; top:0; left:40px; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
             <p style="font-size:25px;color:black;background:linear-gradient(90deg, rgba(170,129,105,1) 0%, rgba(170,129,105,0.6167717086834734) 100%);padding:30px">
                 {% if service.long_description %}

@@ -43,6 +43,10 @@
     margin-bottom: var(--spacing-s);
 }
 
+.main.special article{
+    max-width: 95%;
+}
+
 .main h1 {
     color: var(--emphasis);
     margin-bottom: var(--spacing-s);
