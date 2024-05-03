@@ -135,13 +135,13 @@
         width: 100% !important;
     }
     .article_special article{
-        position: inherit;
+        position: inherit !important;
     }
     .article_special img{
-        height: auto;
+        height: auto !important;
     }
     .article_special article p{
-        margin-bottom: 10px;
+        margin-bottom: 10px !important;
     }
 }
 
