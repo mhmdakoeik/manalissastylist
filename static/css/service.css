@@ -164,6 +164,9 @@
     .special_text{
         width: 100% !important;
     }
+    .main.special .highlight.special img{
+        height: auto !important;
+    }
 }
 
 .main .highlight {
