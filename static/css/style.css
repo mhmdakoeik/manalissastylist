@@ -6183,6 +6183,11 @@ hr {
     opacity: 0.9;
 }
 
+.slider-height2.hero-overly.special::before{
+    background: none;
+    opacity: 0.9;
+}
+
 .sample-text-area {
     background: #fff;
     padding: 100px 0 70px 0

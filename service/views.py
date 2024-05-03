@@ -49,7 +49,10 @@ def services(request):
 def service(request,pk):
     service = Service.objects.get(id=pk)
     context = {'service':service}
-    return render(request,'services/service.html',context)
+    if service.special:
+        return render(request, 'services/special_service.html', context)
+    else:
+        return render(request, 'services/special_service.html', context)
 
 def feedback_form(request):
     success = False

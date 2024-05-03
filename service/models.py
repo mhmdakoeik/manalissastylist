@@ -12,6 +12,7 @@ class Service(models.Model):
     image_1 = models.ImageField(null=True,blank=True,upload_to='uploads/services/')
     what_include = models.TextField(null=True,blank=True)
     priority = models.IntegerField(null=True,blank=False)
+    special = models.BooleanField(blank=True, null=True)
     
     def __str__(self):
         return str(self.title)
