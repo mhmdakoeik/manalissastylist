@@ -59,7 +59,7 @@
       {% if service.what_include %}
       <div class="highlight special" style="background:linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);width:100%;display:flex;padding: 5rem 5rem 5rem 5rem;">
           <img src="{% static 'img/gallery/sign_image.JPG' %}" style="width:50%;margin-block:unset !important;object-fit:cover;height:900px" class="mr-4">
-          <div style="width:60%">
+          <div class="special_text" style="width:60%">
             <h3 style="color:White;font-size:x-large;font-family:'arial';font-weight:200;">What To Expect</h3>
             <ul class="m-0 list-unstyled">
               {% for line in service.what_include.splitlines %}

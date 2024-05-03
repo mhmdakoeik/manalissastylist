@@ -157,6 +157,14 @@
         left: 0 !important;
     }
 }
+@media (max-width:500px){
+    .main.special .highlight.special{
+        padding: 2rem 2rem 2rem 2rem !important;
+    }
+    .special_text{
+        width: 100% !important;
+    }
+}
 
 .main .highlight {
     margin: var(--center-it);
