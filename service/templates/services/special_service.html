@@ -7,7 +7,7 @@
 <main>
 <div class="slider-area position-relative">
   <div class="slider-active">
-    <div class="single-slider position-relative hero-overly slider-height2 special d-flex align-items-center" data-background="{% static  'img/gallery/banner.JPG' %}" style="height:700px">
+    <div class="single-slider position-relative hero-overly slider-height2 special d-flex align-items-center" data-background="{% static  'img/gallery/banner.jpg' %}" style="height:500px">
           <div class="container" style="position:absolute;top:inherit">
            <div class="row">
                <div class="col-xl-6 col-lg-6">
@@ -37,7 +37,7 @@
       </p>
     </article>
     <article style="margin:0 auto; position:relative;">
-        <img src="{{service.main_image.url}}" style="height:500px; width:100%; object-fit:contain"/>
+        <img src="{{service.main_image.url}}" style="height:700px; width:100%; object-fit:contain"/>
         <article style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
             <p style="font-size:25px;color:black;background:linear-gradient(90deg, rgba(170,129,105,1) 0%, rgba(170,129,105,0.6167717086834734) 100%);padding:30px">
                 {% if service.long_description %}
@@ -55,7 +55,7 @@
       </div>
       {% if service.what_include %}
       <div class="highlight special" style="background:linear-gradient(to left, #e9b89b, #d4a58a, #bf9379, #aa8169, #967059);width:100%;display:flex;padding: 5rem 5rem 5rem 5rem;">
-          <img src="{% static 'img/gallery/sign_image.JPG' %}" style="width:50%;margin-block:unset !important;" class="mr-4">
+          <img src="{% static 'img/gallery/sign_image.JPG' %}" style="width:50%;margin-block:unset !important;object-fit:cover" class="mr-4">
           <div>
             <h3 style="color:White;font-size:x-large;font-family:'arial';font-weight:200;">What To Expect</h3>
             <ul class="m-0 list-unstyled">
